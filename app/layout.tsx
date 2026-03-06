@@ -10,11 +10,18 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flockpilot.enroagro.com"),
-  title: "FlockPilot by Enro Agro Limited | Poultry Farm ERP for Nigeria",
+  title: {
+    default: "FlockPilot | Poultry Farm ERP by Enro Agro Limited",
+    template: "%s | FlockPilot"
+  },
   applicationName: "FlockPilot",
   description:
-    "FlockPilot gives poultry farmers in Nigeria a real-time operations-and-finance cockpit to track flock health, feed efficiency, and unit economics.",
+    "FlockPilot (also searched as Flock Pilot) is poultry farm ERP software by Enro Agro Limited for farm operations, feed efficiency, and unit economics in Nigeria and Africa.",
   keywords: [
+    "flockpilot",
+    "flock pilot",
+    "flockpilot nigeria",
+    "flock pilot nigeria",
     "poultry farm software Nigeria",
     "poultry ERP",
     "farm operations software",
@@ -22,10 +29,25 @@ export const metadata: Metadata = {
     "FlockPilot",
     "Enro Agro Limited"
   ],
+  category: "Agriculture Technology",
+  creator: "Enro Agro Limited",
+  publisher: "Enro Agro Limited",
+  authors: [{ name: "Enro Agro Limited" }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   openGraph: {
-    title: "FlockPilot by Enro Agro Limited",
+    title: "FlockPilot (Flock Pilot) by Enro Agro Limited",
     description:
-      "Track flock health, feed efficiency, and unit economics in one cockpit built for poultry operators in Nigeria and across Africa.",
+      "FlockPilot is a real-time poultry operations and finance cockpit for profitable batches.",
     type: "website",
     locale: "en_NG",
     url: "https://flockpilot.enroagro.com",
@@ -39,6 +61,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://flockpilot.enroagro.com"
+  },
+  other: {
+    "apple-mobile-web-app-title": "FlockPilot"
   }
 };
 
