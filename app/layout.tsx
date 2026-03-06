@@ -29,22 +29,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     url: "https://flockpilot.enroagro.com",
-    siteName: "FlockPilot",
-    images: [
-      {
-        url: "/brand/enro-logo-with-tagline.svg",
-        width: 1200,
-        height: 630,
-        alt: "FlockPilot by Enro Agro Limited"
-      }
-    ]
+    siteName: "FlockPilot"
   },
   twitter: {
     card: "summary_large_image",
     title: "FlockPilot by Enro Agro Limited",
     description:
-      "Real-time poultry operations and finance cockpit for profitable farm batches.",
-    images: ["/brand/enro-logo-with-tagline.svg"]
+      "Real-time poultry operations and finance cockpit for profitable farm batches."
   },
   alternates: {
     canonical: "https://flockpilot.enroagro.com"
@@ -58,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} font-sans antialiased pattern-overlay`}>
+      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

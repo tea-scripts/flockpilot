@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --brand-deep-green: #113b03;
-  --brand-light-green: #89bf1c;
+  --brand-deep-green: #0f1712;
+  --brand-light-green: #88bd3a;
   --brand-yellow: #f0e000;
-  --brand-canvas: #f7f9ef;
+  --brand-canvas: #1d2a21;
 }
 
 * {
@@ -20,28 +20,49 @@ html {
 body {
   margin: 0;
   font-family: var(--font-plus-jakarta), sans-serif;
-  color: var(--brand-deep-green);
-  background:
-    radial-gradient(circle at 10% 10%, rgba(137, 191, 28, 0.18), transparent 35%),
-    radial-gradient(circle at 90% 20%, rgba(240, 224, 0, 0.2), transparent 40%),
-    var(--brand-canvas);
-}
-
-.pattern-overlay {
-  position: relative;
-}
-
-.pattern-overlay::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("/brand/enro-pattern.png");
-  background-size: 200px;
-  opacity: 0.045;
-  pointer-events: none;
+  color: #ffffff;
+  background: var(--brand-deep-green);
 }
 
 .section-shell {
   position: relative;
   z-index: 1;
+}
+
+.shiny-ring-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.shiny-ring-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(137, 191, 28, 0.2),
+    rgba(240, 224, 0, 0.95),
+    rgba(137, 191, 28, 0.25),
+    rgba(240, 224, 0, 0.9),
+    rgba(137, 191, 28, 0.2)
+  );
+  animation: shiny-circuit 3.2s linear infinite;
+  z-index: -2;
+}
+
+.shiny-ring-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: calc(1.25rem - 2px);
+  background: var(--brand-deep-green);
+  z-index: -1;
+}
+
+@keyframes shiny-circuit {
+  to {
+    transform: rotate(360deg);
+  }
 }
