@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useMemo, useState } from "react";
+import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion, type Variants } from "framer-motion";
 import { requestDemoAction, type DemoFormState } from "@/app/actions";
+import { trackLandingEvent } from "@/lib/analytics";
 
 type BillingCycle = "monthly" | "annual";
 
@@ -308,6 +309,7 @@ export function LandingPage() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [state, formAction] = useActionState(requestDemoAction, initialState);
+  const hasTrackedSuccess = useRef(false);
 
   const pricing = useMemo(
     () =>
@@ -317,6 +319,16 @@ export function LandingPage() {
       })),
     [billing]
   );
+
+  useEffect(() => {
+    if (state.ok && !hasTrackedSuccess.current) {
+      trackLandingEvent("demo_submit_success");
+      hasTrackedSuccess.current = true;
+    }
+    if (!state.ok) {
+      hasTrackedSuccess.current = false;
+    }
+  }, [state.ok]);
 
   return (
     <main className="section-shell">
@@ -331,6 +343,7 @@ export function LandingPage() {
           />
           <a
             href="#demo"
+            onClick={() => trackLandingEvent("nav_launch_pilot_click")}
             className="rounded-full border border-brand-deep/20 bg-white/80 px-4 py-2 text-xs font-semibold tracking-wide text-brand-deep backdrop-blur-sm transition hover:border-brand-light hover:text-brand-light"
           >
             Launch Your Pilot
@@ -356,12 +369,14 @@ export function LandingPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#demo"
+                onClick={() => trackLandingEvent("hero_demo_click")}
                 className="rounded-xl2 bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-light hover:text-brand-deep"
               >
                 Request a Demo
               </a>
               <a
                 href="#pricing"
+                onClick={() => trackLandingEvent("hero_pricing_click")}
                 className="rounded-xl2 border border-brand-deep/30 bg-white/80 px-6 py-3 text-sm font-semibold text-brand-deep transition hover:-translate-y-0.5 hover:border-brand-light hover:text-brand-light"
               >
                 View Pricing
@@ -534,6 +549,12 @@ export function LandingPage() {
               </p>
               <a
                 href="#demo"
+                onClick={() =>
+                  trackLandingEvent("pricing_tier_click", {
+                    tier: tier.name,
+                    billing
+                  })
+                }
                 className="mt-5 inline-flex w-full items-center justify-center rounded-xl2 bg-brand-deep px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-light hover:text-brand-deep"
               >
                 {tier.cta}

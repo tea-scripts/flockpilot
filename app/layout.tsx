@@ -9,9 +9,46 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "FlockPilot by Enro Agro Limited",
+  metadataBase: new URL("https://flockpilot.enroagro.com"),
+  title: "FlockPilot by Enro Agro Limited | Poultry Farm ERP for Nigeria",
+  applicationName: "FlockPilot",
   description:
-    "FlockPilot gives poultry farmers a real-time operations-and-finance cockpit to track flock health, feed efficiency, and unit economics."
+    "FlockPilot gives poultry farmers in Nigeria a real-time operations-and-finance cockpit to track flock health, feed efficiency, and unit economics.",
+  keywords: [
+    "poultry farm software Nigeria",
+    "poultry ERP",
+    "farm operations software",
+    "poultry finance dashboard",
+    "FlockPilot",
+    "Enro Agro Limited"
+  ],
+  openGraph: {
+    title: "FlockPilot by Enro Agro Limited",
+    description:
+      "Track flock health, feed efficiency, and unit economics in one cockpit built for poultry operators in Nigeria and across Africa.",
+    type: "website",
+    locale: "en_NG",
+    url: "https://flockpilot.enroagro.com",
+    siteName: "FlockPilot",
+    images: [
+      {
+        url: "/brand/enro-logo-with-tagline.svg",
+        width: 1200,
+        height: 630,
+        alt: "FlockPilot by Enro Agro Limited"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FlockPilot by Enro Agro Limited",
+    description:
+      "Real-time poultry operations and finance cockpit for profitable farm batches.",
+    images: ["/brand/enro-logo-with-tagline.svg"]
+  },
+  alternates: {
+    canonical: "https://flockpilot.enroagro.com"
+  }
 };
 
 export default function RootLayout({
