@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-deep-green: #113b03;
+  --brand-light-green: #89bf1c;
+  --brand-yellow: #f0e000;
+  --brand-canvas: #f7f9ef;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-plus-jakarta), sans-serif;
+  color: var(--brand-deep-green);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(137, 191, 28, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 20%, rgba(240, 224, 0, 0.2), transparent 40%),
+    var(--brand-canvas);
+}
+
+.pattern-overlay {
+  position: relative;
+}
+
+.pattern-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/brand/enro-pattern.png");
+  background-size: 200px;
+  opacity: 0.045;
+  pointer-events: none;
+}
+
+.section-shell {
+  position: relative;
+  z-index: 1;
+}
