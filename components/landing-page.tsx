@@ -651,7 +651,14 @@ export function LandingPage() {
                   </a>
                   <ul className="mt-4 space-y-2 text-sm leading-6 text-white/85">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="rounded-lg bg-[#223329] px-3 py-2">
+                      <li
+                        key={feature}
+                        className={`rounded-lg border px-3 py-2 break-words [overflow-wrap:anywhere] ${
+                          tier.featured
+                            ? "border-white/15 bg-[#2b3f33]"
+                            : "border-white/10 bg-[#223329]"
+                        }`}
+                      >
                         {feature}
                       </li>
                     ))}
