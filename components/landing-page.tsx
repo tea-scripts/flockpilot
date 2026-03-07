@@ -538,9 +538,8 @@ export function LandingPage() {
         <motion.div
           className="mt-12 space-y-10"
           variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          initial="show"
+          animate="show"
         >
           {featureGroups.map((group) => (
             <motion.section key={group.title} variants={revealVariants}>
@@ -627,9 +626,7 @@ export function LandingPage() {
                 ) : null}
                 <div
                 className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm ${
-                  tier.featured
-                    ? "border-white/20 bg-[#223329]"
-                    : "border-white/20 bg-brand-canvas"
+                  "border-white/20 bg-brand-canvas"
                 }`}
               >
                 <h3 className="text-2xl font-bold text-white">{tier.name}</h3>
@@ -672,19 +669,19 @@ export function LandingPage() {
 
         <Reveal className="mt-12 rounded-2xl border border-white/20 bg-brand-canvas p-6 shadow-sm sm:p-8">
           <h3 className="text-xl font-bold text-brand-yellow">Add-ons</h3>
-          <div className="mt-5 overflow-x-auto">
-            <table className="w-full min-w-[520px] border-collapse text-left text-sm">
+          <div className="mt-5">
+            <table className="w-full border-collapse text-left text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-white/20 text-white">
                   <th className="px-3 py-3 font-semibold">Add-on</th>
-                  <th className="px-3 py-3 font-semibold">Price</th>
+                  <th className="w-[42%] px-3 py-3 font-semibold">Price</th>
                 </tr>
               </thead>
               <tbody>
                 {addOns.map(([name, price]) => (
                   <tr key={name} className="border-b border-white/15">
-                    <td className="px-3 py-3 text-white/85">{name}</td>
-                    <td className="px-3 py-3 font-semibold text-brand-yellow">{price}</td>
+                    <td className="px-3 py-3 text-white/85 [overflow-wrap:anywhere]">{name}</td>
+                    <td className="px-3 py-3 font-semibold text-brand-yellow [overflow-wrap:anywhere]">{price}</td>
                   </tr>
                 ))}
               </tbody>
