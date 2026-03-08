@@ -59,6 +59,12 @@ body {
   border-radius: calc(1.25rem - 2px);
   background: var(--brand-deep-green);
   z-index: -1;
+  transition: background-color 200ms ease;
+}
+
+.shiny-ring-btn:hover::after,
+.shiny-ring-btn:focus-visible::after {
+  background: var(--brand-light-green);
 }
 
 @keyframes shiny-circuit {

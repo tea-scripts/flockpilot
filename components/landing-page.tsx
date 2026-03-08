@@ -850,22 +850,43 @@ export function LandingPage() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-yellow">Socials</h3>
             <div className="mt-4 space-y-3 text-sm">
-              <a href="https://x.com/enroagro" className="flex items-center gap-3 text-white/90 hover:text-brand-yellow">
+              <a
+                href="https://x.com/enroagro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Enro Agro on X"
+                className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
+              >
                 <X className="h-4 w-4" />
                 <span>@enroagro</span>
               </a>
               <a
                 href="https://instagram.com/enroagro"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Enro Agro on Instagram"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <Instagram className="h-4 w-4" />
                 <span>@enroagro</span>
               </a>
-              <a href="https://facebook.com" className="flex items-center gap-3 text-white/90 hover:text-brand-yellow">
+              <a
+                href="https://www.facebook.com/profile.php?id=61587126820939"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Enro Agro Limited on Facebook"
+                className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
+              >
                 <Facebook className="h-4 w-4" />
                 <span>Enro Agro Limited</span>
               </a>
-              <a href="https://linkedin.com" className="flex items-center gap-3 text-white/90 hover:text-brand-yellow">
+              <a
+                href="https://www.linkedin.com/company/enro-agro-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Follow Enro Agro Limited on LinkedIn"
+                className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
+              >
                 <Linkedin className="h-4 w-4" />
                 <span>Enro Agro Limited</span>
               </a>
