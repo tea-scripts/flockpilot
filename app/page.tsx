@@ -34,13 +34,40 @@ const productStructuredData = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   offers: {
-    "@type": "Offer",
-    price: "25000",
+    "@type": "AggregateOffer",
+    lowPrice: "45000",
+    highPrice: "300000",
     priceCurrency: "NGN",
-    category: "Starter Plan"
+    offerCount: 4,
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Starter",
+        price: "45000",
+        priceCurrency: "NGN",
+        description: "Up to 2,000 birds, 1 farm site, 3 users"
+      },
+      {
+        "@type": "Offer",
+        name: "Growth",
+        price: "120000",
+        priceCurrency: "NGN",
+        description: "Up to 10,000 birds, 3 farm sites, 10 users, AI assistant (100 msgs/mo)"
+      },
+      {
+        "@type": "Offer",
+        name: "Scale",
+        price: "300000",
+        priceCurrency: "NGN",
+        description: "Up to 50,000 birds, 10 farm sites, 30 users, AI assistant (300 msgs/mo)"
+      }
+    ]
   },
   description:
-    "FlockPilot gives poultry farmers a real-time operations-and-finance cockpit that tracks flock health, feed efficiency, and unit economics.",
+    "FlockPilot gives poultry farmers a real-time operations-and-finance cockpit that tracks flock health, feed efficiency, unit economics, and includes an AI assistant for instant farm insights.",
+  featureList:
+    "Farm operations tracking, Feed consumption analytics, Mortality analysis, Flock sales management, Accounts payable, Payroll with payslips, Employee loans, Chart of accounts, Financial statements, AI-powered assistant",
+  screenshot: "https://flockpilot.enroagro.com/opengraph-image",
   provider: {
     "@type": "Organization",
     name: "Enro Agro Limited"
@@ -57,6 +84,22 @@ const faqStructuredData = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Active birds means birds currently in live batches during the month. If you restock and run new batches, your plan should match your peak monthly capacity."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "How much does FlockPilot cost?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "FlockPilot starts at ₦45,000/month for the Starter plan (up to 2,000 birds). Growth is ₦120,000/month (10,000 birds), Scale is ₦300,000/month (50,000 birds), and Enterprise pricing is custom. Annual billing saves 15%."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "What is the AI Assistant?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "FlockPilot includes a built-in AI assistant powered by Claude that understands your farm data. Ask questions about feed conversion ratios, mortality trends, financial summaries, or get plain-English explanations of your reports. Available on Growth (100 messages/month), Scale (300 messages/month), and Enterprise (unlimited) plans."
       }
     },
     {
@@ -88,7 +131,7 @@ const faqStructuredData = {
       name: "Can I start small and upgrade mid-month?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Upgrades are prorated."
+        text: "Yes. Upgrades are prorated — you only pay the difference for the remaining days."
       }
     },
     {

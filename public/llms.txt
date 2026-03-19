@@ -1,0 +1,46 @@
+# FlockPilot
+
+> FlockPilot is a multi-tenant poultry farm management ERP built by Enro Agro Limited. It gives poultry farmers in Nigeria and Africa a real-time operations-and-finance cockpit for profitable batches.
+
+FlockPilot is a cloud-based SaaS platform designed specifically for poultry farm operations. It combines farm operations tracking, financial accounting, payroll, HR, and an AI assistant into one integrated system.
+
+## Key Capabilities
+
+- **Farm Operations**: Flock batch management, feed inventory and consumption tracking, mortality analysis, medication cost tracking, sales event management (by bird or by kg), and approval workflows.
+- **Finance & Accounting**: Double-entry journal ledger, accounts payable with draft→submit→approve→pay lifecycle, chart of accounts with versioning, fiscal periods, financial statements (P&L, balance sheet, trial balance, cash flow), and AP aging reports.
+- **Payroll & HR**: Payroll runs with automated deductions and allowances, PDF payslip generation and email delivery, employee directory, salary history, and department management.
+- **Employee Loans**: Loan applications with credit scoring, eligibility checks, one-active-loan enforcement, and repayment tracking integrated with payroll.
+- **AI Assistant**: Built-in AI chat powered by Claude that understands the user's current module context. Provides practical advice on feed management, mortality control, batch economics, and financial best practices.
+- **Farm Intelligence**: Flight Deck live operational dashboard, batch profitability analysis, multi-batch comparisons, and analytics export.
+- **Security**: Role-based access control with 12 roles, multi-tenant data isolation, audit trail, and configurable permissions.
+
+## Pricing
+
+- **Starter**: ₦45,000/month — Up to 2,000 birds, 1 farm site, 3 users
+- **Growth**: ₦120,000/month — Up to 10,000 birds, 3 sites, 10 users, AI (100 msgs/mo)
+- **Scale**: ₦300,000/month — Up to 50,000 birds, 10 sites, 30 users, AI (300 msgs/mo)
+- **Enterprise**: Custom pricing — Unlimited everything, dedicated support
+
+Annual billing saves 15%.
+
+## Target Users
+
+Poultry farmers, farm managers, agricultural businesses, poultry integrators, and livestock operations in Nigeria and across Africa who need structured farm management, financial tracking, and operational visibility.
+
+## Technology
+
+Built with NestJS, Next.js, PostgreSQL, and Prisma. Deployed on Render. Multi-tenant architecture with complete data isolation between organizations.
+
+## Contact
+
+- Website: https://flockpilot.enroagro.com
+- Email: info@enroagro.com
+- Phone: +234 816 242 0463
+- Company: Enro Agro Limited, Lagos, Nigeria
+
+## Links
+
+- [Full details](https://flockpilot.enroagro.com/llms-full.txt)
+- [Features](https://flockpilot.enroagro.com/features)
+- [Pricing](https://flockpilot.enroagro.com/pricing)
+- [AI Assistant](https://flockpilot.enroagro.com/ai-assistant)
