@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion, type Variants } from "framer-motion";
-import { Facebook, Instagram, Linkedin, X } from "lucide-react";
+import { Facebook, Instagram, Linkedin, X, ChevronDown } from "lucide-react";
 import { requestDemoAction, type DemoFormState } from "@/app/actions";
 import { trackLandingEvent } from "@/lib/analytics";
 
@@ -17,7 +17,6 @@ type FeatureItem = {
 type FeatureGroup = {
   icon: string;
   title: string;
-  description: string;
   features: FeatureItem[];
 };
 
@@ -55,198 +54,149 @@ const staggerContainer: Variants = {
 
 const initialState: DemoFormState = { ok: false, message: "" };
 
-const featureGroups: FeatureGroup[] = [
+/* ─── Hero Features (3 large outcome-driven sections) ─── */
+
+const heroFeatures = [
+  {
+    badge: "Core Platform",
+    title: "Know your cost per bird before the batch ends.",
+    description:
+      "Track flock health, feed consumption, mortality, medication, and sales in real time. FlockPilot connects your farm floor to your financial reports — so you catch margin leaks early, not after the cash is gone.",
+    highlights: [
+      "Live batch dashboards with FCR, mortality drift, and margin tracking",
+      "Feed inventory with consumption alerts and supplier lot tracing",
+      "Sales tracking by bird or by kg with automatic COGS posting",
+      "Approval workflows for every farm event before it hits the books",
+    ],
+    visual: [
+      ["Flock Health Index", "94.2% stable"],
+      ["Feed Conversion", "1.85 avg FCR"],
+      ["Mortality Drift", "-12% vs prior cycle"],
+      ["Unit Margin", "+₦124 per bird"],
+    ],
+  },
+  {
+    badge: "Full ERP",
+    title: "Finance, payroll, and HR — built in, not bolted on.",
+    description:
+      "Stop juggling spreadsheets for payroll, separate apps for accounting, and WhatsApp threads for HR. FlockPilot has double-entry ledger accounting, automated payroll with PDF payslips, employee loans with credit scoring, and document management — all sharing one source of truth.",
+    highlights: [
+      "Double-entry journal system with P&L, balance sheet, and cash flow",
+      "Payroll runs with automated deductions, allowances, and email payslips",
+      "Employee loan applications with eligibility scoring and repayment tracking",
+      "Role-based access across 12 roles — from farm staff to finance managers",
+    ],
+    visual: [
+      ["Active Employees", "47 across 3 sites"],
+      ["This Month Payroll", "₦8.2M processed"],
+      ["Open Loans", "12 active, ₦2.4M"],
+      ["Pending Approvals", "3 awaiting review"],
+    ],
+  },
+  {
+    badge: "New",
+    title: "Ask your farm a question. Get answers instantly.",
+    description:
+      "FlockPilot AI is a built-in assistant that understands your context — the module you're in, the data you're looking at — and gives practical, specific advice about poultry management, finance best practices, and operational workflows.",
+    highlights: [
+      "Context-aware — knows if you're in Farm Ops, Finance, Payroll, or HR",
+      "Practical advice on feed management, mortality control, and batch economics",
+      "Available on Growth (admins, 100 msgs/month) and Scale+ (all roles, 300/month)",
+      "Enterprise gets unlimited AI messages with priority processing",
+    ],
+    visual: [
+      ["AI Messages", "88 of 300 used"],
+      ["Avg Response", "< 3 seconds"],
+      ["Modules Covered", "Farm · Finance · HR"],
+      ["Accuracy", "Context-aware prompts"],
+    ],
+  },
+];
+
+/* ─── Detailed feature grid (expandable) ─── */
+
+const detailedFeatures: FeatureGroup[] = [
   {
     icon: "🚜",
     title: "Farm Operations",
-    description: "Run daily farm execution with clean lifecycle records, sales flow, and loss controls.",
     features: [
-      {
-        name: "Farm Site Management",
-        summary: "Track multiple farm sites, buildings, and resources in one place."
-      },
-      {
-        name: "Batch Management",
-        summary: "Create, monitor, and manage production batches with full visibility."
-      },
-      {
-        name: "Sales Event Management",
-        summary: "Process sales orders and capture customer-level sales records."
-      },
-      {
-        name: "Feed Inventory",
-        summary: "Monitor feed stock levels, usage, and inventory movement in real time."
-      },
-      {
-        name: "Mortality Tracking",
-        summary: "Record and analyze mortality events with complete operational context."
-      },
-      {
-        name: "Medication Cost Tracking",
-        summary: "Track medication usage schedules and approved medication costs."
-      },
-      {
-        name: "Approvals Queues",
-        summary: "Centralize review and approval steps for farm and finance workflows."
-      }
-    ]
+      { name: "Farm Site Management", summary: "Track multiple farm sites, buildings, and resources." },
+      { name: "Batch Management", summary: "Create, monitor, and manage production batches." },
+      { name: "Sales Event Management", summary: "Process sales and capture customer-level records." },
+      { name: "Feed Inventory", summary: "Monitor feed stock levels, usage, and movement." },
+      { name: "Mortality Tracking", summary: "Record and analyze mortality events with context." },
+      { name: "Medication Cost Tracking", summary: "Track medication usage and approved costs." },
+      { name: "Approvals Queues", summary: "Centralized review and approval workflows." },
+    ],
   },
   {
     icon: "📊",
     title: "Farm Intelligence",
-    description: "Turn operational data into live visibility, performance benchmarks, and export-ready insights.",
     features: [
-      {
-        name: "Flight Deck - Farm Ops Cockpit",
-        summary: "See live operational metrics and KPI trends from one cockpit."
-      },
-      {
-        name: "Batch Profitability Insights",
-        summary: "Break down batch profitability and compare cycle performance."
-      },
-      {
-        name: "Analytics Export",
-        summary: "Export farm analytics for reporting and external analysis tools."
-      }
-    ]
+      { name: "Flight Deck", summary: "Live operational metrics and KPI trends in one cockpit." },
+      { name: "Batch Profitability", summary: "Break down profitability and compare cycles." },
+      { name: "Analytics Export", summary: "Export farm analytics for external analysis tools." },
+    ],
   },
   {
     icon: "💰",
     title: "Finance & Accounting",
-    description: "Track farm spending, monitor financial performance, and report with confidence.",
     features: [
-      {
-        name: "Expense Entry Workflow",
-        summary: "Submit and approve expenses with controlled review flow."
-      },
-      {
-        name: "Financial Statements",
-        summary: "Generate core financial reports for management visibility."
-      },
-      {
-        name: "Finance Dashboard",
-        summary: "Monitor financial health with revenue, cost, and trend views."
-      }
-    ]
+      { name: "Expense Workflows", summary: "Submit and approve expenses with controlled review." },
+      { name: "Financial Statements", summary: "P&L, balance sheet, trial balance, cash flow." },
+      { name: "Finance Dashboard", summary: "Revenue, cost, and trend views at a glance." },
+      { name: "Double-Entry Ledger", summary: "Full journal system with automatic postings." },
+    ],
   },
   {
     icon: "👥",
     title: "Workforce & Payroll",
-    description: "Manage teams and payroll operations with auditable records and employee access.",
     features: [
-      {
-        name: "Employee Directory",
-        summary: "Maintain complete staff records and role assignments."
-      },
-      {
-        name: "Payroll Run Management",
-        summary: "Process salary runs with checks, controls, and status visibility."
-      },
-      {
-        name: "Payslip Generation",
-        summary: "Generate downloadable payslips for each payroll cycle."
-      },
-      {
-        name: "Payslip Self-Service",
-        summary: "Let employees securely access and download their own payslips."
-      },
-      {
-        name: "Automated Pay Components",
-        summary: "Apply recurring allowances, deductions, and loan repayments automatically."
-      }
-    ]
+      { name: "Employee Directory", summary: "Complete staff records and role assignments." },
+      { name: "Payroll Runs", summary: "Process salary runs with checks and controls." },
+      { name: "PDF Payslips", summary: "Generate and email downloadable payslips." },
+      { name: "Self-Service Portal", summary: "Employees access payslips, loans, and profiles." },
+      { name: "Automated Components", summary: "Recurring allowances, deductions, and loan repayments." },
+    ],
   },
   {
     icon: "🪙",
-    title: "Loan Management",
-    description: "Digitize loan workflows from employee requests to approvals and repayment visibility.",
+    title: "Loans",
     features: [
-      {
-        name: "Loan Applications",
-        summary: "Collect employee loan requests through a guided digital flow."
-      },
-      {
-        name: "Repayment Tracking",
-        summary: "Track loan balances, schedules, and repayment progress."
-      },
-      {
-        name: "Approval Workflow",
-        summary: "Route loans through role-based approval and decision steps."
-      }
-    ]
+      { name: "Loan Applications", summary: "Guided digital flow for employee loan requests." },
+      { name: "Credit Scoring", summary: "Automated eligibility checks before approval." },
+      { name: "Repayment Tracking", summary: "Balances, schedules, and settlement progress." },
+    ],
   },
   {
-    icon: "👤",
-    title: "Employee Self-Service",
-    description: "Give staff direct access to personal records, payroll, loan status, and guidance.",
+    icon: "🤖",
+    title: "AI Assistant",
     features: [
-      {
-        name: "My Profile",
-        summary: "Employees can view and confirm their own profile details."
-      },
-      {
-        name: "My Payslips",
-        summary: "Access payroll history and payslip documents anytime."
-      },
-      {
-        name: "My Loans",
-        summary: "View loan applications, approvals, and repayment balance."
-      },
-      {
-        name: "Help & Policy Guides",
-        summary: "Access built-in guides and policy references without support tickets."
-      }
-    ]
-  },
-  {
-    icon: "🔔",
-    title: "Documents & Notifications",
-    description: "Secure critical documents and keep teams informed on key operational actions.",
-    features: [
-      {
-        name: "Secure Document Storage",
-        summary: "Store sensitive records with controlled access and retrieval."
-      },
-      {
-        name: "Employee Document Requests",
-        summary: "Handle staff document requests from a central workflow."
-      },
-      {
-        name: "In-App Notifications",
-        summary: "Deliver timely updates and alerts directly inside the platform."
-      }
-    ]
+      { name: "FlockPilot AI Chat", summary: "Ask questions and get practical advice in-platform." },
+      { name: "Module-Aware Responses", summary: "Tailored answers based on your current context." },
+      { name: "Support Tickets", summary: "Submit help requests directly from the widget." },
+    ],
   },
   {
     icon: "🔒",
     title: "Admin & Security",
-    description: "Enforce governance, access controls, and accountability across the organization.",
     features: [
-      {
-        name: "Role-Based Access",
-        summary: "Define role permissions and restrict data visibility by access level."
-      },
-      {
-        name: "User Administration",
-        summary: "Manage user accounts, permissions, and account status centrally."
-      },
-      {
-        name: "Tenant Configuration",
-        summary: "Configure organization-wide settings and operating rules."
-      },
-      {
-        name: "Audit Trail",
-        summary: "Track important system actions for compliance and accountability."
-      }
-    ]
-  }
+      { name: "Role-Based Access", summary: "12 roles with configurable permissions." },
+      { name: "Audit Trail", summary: "Track system actions for compliance." },
+      { name: "Multi-Tenant Isolation", summary: "Complete data separation between organizations." },
+      { name: "Document Storage", summary: "Secure file storage with controlled access." },
+      { name: "In-App Notifications", summary: "Timely alerts for approvals, events, and updates." },
+    ],
+  },
 ];
+
+/* ─── Pricing ─── */
 
 const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
-    monthly: "₦25,000/month",
-    annual: "₦255,000/year",
+    monthly: "₦45,000/month",
+    annual: "₦459,000/year",
     subtitle: "For pilots and small farms getting disciplined.",
     features: [
       "Up to 2,000 active birds",
@@ -256,15 +206,16 @@ const pricingTiers: PricingTier[] = [
       "Mortality + Medication logging",
       "Sales tracking (Bird or Kg)",
       "Basic alerts (data quality + ops thresholds)",
-      "Exports (CSV)"
+      "Exports (CSV)",
+      "Email support"
     ],
     cta: "Start Starter",
     bestFor: "500–2,000 birds, first-time structured tracking."
   },
   {
     name: "Growth",
-    monthly: "₦60,000/month",
-    annual: "₦612,000/year",
+    monthly: "₦120,000/month",
+    annual: "₦1,224,000/year",
     subtitle: "For farms running consistent cycles and managing costs.",
     features: [
       "Up to 10,000 active birds",
@@ -274,23 +225,27 @@ const pricingTiers: PricingTier[] = [
       "Advanced alerts (mortality, feed gaps, early sales, margin warnings)",
       "Expense buckets (Feed/Labor/Vet/Utilities/Transport/Other)",
       "Role-based access (Ops vs Finance views)",
-      "Drill-down reporting"
+      "Drill-down reporting",
+      "AI Assistant (100 messages/month)",
+      "Financial statements (P&L, balance sheet)"
     ],
     cta: "Start Growth",
     bestFor: "2,000–10,000 birds, multiple batches, owner + farm manager + accounts."
   },
   {
     name: "Scale",
-    monthly: "₦150,000/month",
-    annual: "₦1,530,000/year",
+    monthly: "₦300,000/month",
+    annual: "₦3,060,000/year",
     subtitle: "For multi-site operations that need control and accountability.",
     features: [
       "Up to 50,000 active birds",
       "Up to 10 farm sites",
       "Up to 30 users",
+      "Everything in Growth, plus:",
       "Multi-batch comparisons (performance and profitability)",
-      "Audit logs + approvals workflow (optional modules)",
+      "Audit logs + approvals workflow",
       "Custom thresholds per farm site",
+      "AI Assistant (300 messages/month, all roles)",
       "Priority support (business hours)",
       "Dedicated onboarding session"
     ],
@@ -305,6 +260,7 @@ const pricingTiers: PricingTier[] = [
     subtitle: "For large operators, integrators, and groups.",
     features: [
       "Unlimited birds/sites/users",
+      "Unlimited AI Assistant messages",
       "SLA + dedicated support channel",
       "Custom integrations (ERP, accounting, IoT, inventory)",
       "Custom reporting + data warehouse exports",
@@ -344,15 +300,32 @@ const faqItems = [
     question: "Do you offer a trial?",
     answer:
       "Yes - 14-day pilot access on Starter, restricted to 1 batch and 2 users."
+  },
+  {
+    question: "What is the AI Assistant?",
+    answer:
+      "FlockPilot AI is a built-in chat assistant that answers questions about farm management, finance, payroll, and operations. It's context-aware — it knows which module you're working in. Available on Growth (admins/managers, 100 msgs/month) and Scale+ (all roles, 300 msgs/month). Enterprise gets unlimited."
   }
 ];
 
 const addOns = [
-  ["Onboarding & Setup (Starter/Growth)", "₦100,000 one-time"],
-  ["Onboarding & Setup (Scale)", "₦250,000 one-time"],
+  ["Onboarding & Setup (Starter/Growth)", "₦150,000 one-time"],
+  ["Onboarding & Setup (Scale)", "₦350,000 one-time"],
   ["WhatsApp/SMS Alerts Pack", "₦10,000/month (up to 1,000 messages)"],
-  ["Extra Farm Site", "₦15,000/month per site"]
+  ["Extra Farm Site", "₦15,000/month per site"],
+  ["Additional AI Messages (100 pack)", "₦5,000/month"]
 ] as const;
+
+/* ─── Social proof metrics ─── */
+
+const metrics = [
+  { value: "50,000+", label: "Birds tracked" },
+  { value: "16", label: "Modules built" },
+  { value: "99.9%", label: "Uptime" },
+  { value: "< 3s", label: "AI response time" },
+];
+
+/* ─── Utility components ─── */
 
 function Reveal({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
@@ -389,9 +362,12 @@ function FieldError({ error }: { error?: string }) {
   return <p className="mt-1 text-xs font-medium text-brand-yellow">{error}</p>;
 }
 
+/* ─── Main component ─── */
+
 export function LandingPage() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
   const [state, formAction] = useActionState(requestDemoAction, initialState);
   const hasTrackedSuccess = useRef(false);
 
@@ -416,91 +392,107 @@ export function LandingPage() {
 
   return (
     <main className="section-shell text-white">
-      <section className="mx-auto max-w-[1600px] px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-24">
+      {/* ─── Navigation ─── */}
+      <section className="mx-auto max-w-[1600px] px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8">
         <Reveal className="flex items-center justify-between gap-4">
           <p className="text-2xl font-extrabold tracking-tight text-brand-yellow sm:text-3xl">
             FlockPilot
           </p>
-          <a
-            href="#demo"
-            onClick={() => trackLandingEvent("nav_launch_pilot_click")}
-            className="rounded-full border border-brand-light/60 bg-brand-canvas px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm transition hover:border-brand-yellow hover:text-brand-yellow"
-          >
-            Launch Your Pilot
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#features"
+              className="hidden text-sm font-medium text-white/80 transition hover:text-white sm:inline"
+            >
+              Features
+            </a>
+            <a
+              href="#pricing"
+              className="hidden text-sm font-medium text-white/80 transition hover:text-white sm:inline"
+            >
+              Pricing
+            </a>
+            <a
+              href="#demo"
+              onClick={() => trackLandingEvent("nav_launch_pilot_click")}
+              className="rounded-full border border-brand-light/60 bg-brand-canvas px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm transition hover:border-brand-yellow hover:text-brand-yellow"
+            >
+              Launch Your Pilot
+            </a>
+          </div>
         </Reveal>
+      </section>
 
+      {/* ─── Hero ─── */}
+      <section className="mx-auto max-w-[1600px] px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
         <motion.div
-          className="mt-12 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]"
+          className="mx-auto max-w-3xl text-center"
           variants={staggerContainer}
           initial="hidden"
           animate="show"
         >
-          <motion.div variants={revealVariants}>
-            <p className="inline-flex items-center rounded-full border border-brand-light/50 bg-brand-canvas px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">
-              FlockPilot by Enro Agro Limited
-            </p>
-            <h1 className="mt-5 text-4xl font-bold leading-tight text-white sm:text-5xl">
-              Real-time poultry operations and finance cockpit for profitable batches.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/85 sm:text-lg">
-              FlockPilot tracks flock health, feed efficiency, and unit economics in one place so Nigerian poultry operators can catch losses early and run every cycle with confidence.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#demo"
-                onClick={() => trackLandingEvent("hero_demo_click")}
-                className="shiny-ring-btn rounded-xl2 bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-light hover:text-brand-deep"
-              >
-                Request a Demo
-              </a>
-              <a
-                href="#pricing"
-                onClick={() => trackLandingEvent("hero_pricing_click")}
-                className="rounded-xl2 border border-white/60 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-brand-yellow hover:text-brand-yellow"
-              >
-                View Pricing
-              </a>
-            </div>
-          </motion.div>
-
-          <motion.div variants={revealVariants}>
-            <div className="rounded-[28px] border border-white/20 bg-brand-canvas p-5 shadow-panel backdrop-blur">
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  ["Flock Health Index", "94.2% stable"],
-                  ["Feed Conversion", "1.85 avg FCR"],
-                  ["Mortality Drift", "-12% vs prior cycle"],
-                  ["Unit Margin", "+₦124 per bird"]
-                ].map(([label, value]) => (
-                  <motion.div
-                    key={label}
-                    whileHover={{ y: -4, scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                    className="rounded-2xl border border-white/15 bg-[#223329] p-4"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
-                      {label}
-                    </p>
-                    <p className="mt-2 text-lg font-bold text-white">{value}</p>
-                  </motion.div>
-                ))}
-              </div>
-              <div className="mt-4 rounded-2xl bg-brand-deep p-4 text-white">
-                <p className="text-xs uppercase tracking-[0.12em] text-white/70">Live Alert</p>
-                <p className="mt-1 text-sm font-medium leading-6">
-                  Feed intake at Site B has dropped below target for 2 consecutive days. Investigate intake logs and inventory flow.
-                </p>
-              </div>
-            </div>
+          <motion.p
+            variants={revealVariants}
+            className="inline-flex items-center rounded-full border border-brand-light/50 bg-brand-canvas px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow"
+          >
+            FlockPilot by Enro Agro Limited
+          </motion.p>
+          <motion.h1
+            variants={revealVariants}
+            className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl"
+          >
+            The operating system for
+            <span className="text-brand-yellow"> profitable poultry farms</span>
+          </motion.h1>
+          <motion.p
+            variants={revealVariants}
+            className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg"
+          >
+            Farm ops, finance, payroll, HR, and AI — in one platform. Built for Nigerian poultry operators who want to stop guessing and start knowing.
+          </motion.p>
+          <motion.div variants={revealVariants} className="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href="#demo"
+              onClick={() => trackLandingEvent("hero_demo_click")}
+              className="shiny-ring-btn rounded-xl2 bg-brand-deep px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-brand-light hover:text-brand-deep"
+            >
+              Request a Demo
+            </a>
+            <a
+              href="#pricing"
+              onClick={() => trackLandingEvent("hero_pricing_click")}
+              className="rounded-xl2 border border-white/60 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-brand-yellow hover:text-brand-yellow"
+            >
+              View Pricing
+            </a>
           </motion.div>
         </motion.div>
       </section>
 
-      <section className="mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
+      {/* ─── Social Proof Bar ─── */}
+      <section className="border-y border-white/10 bg-brand-canvas/50 backdrop-blur">
+        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="grid grid-cols-2 gap-4 py-8 sm:grid-cols-4 sm:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            {metrics.map((m) => (
+              <motion.div key={m.label} variants={revealVariants} className="text-center">
+                <p className="text-2xl font-bold text-brand-yellow sm:text-3xl">{m.value}</p>
+                <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-white/60">{m.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── Problem → Solution ─── */}
+      <section className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <Reveal className="rounded-[26px] border border-white/20 bg-brand-canvas p-8 shadow-panel sm:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">
-            Problem to Solution
+            The Problem
           </p>
           <div className="mt-7 grid gap-10 lg:grid-cols-2">
             <div>
@@ -523,54 +515,121 @@ export function LandingPage() {
         </Reveal>
       </section>
 
-      <section
-        id="features"
-        className="mx-auto max-w-[1600px] px-4 py-14 pb-20 sm:px-6 lg:px-10 lg:py-16 lg:pb-24"
-      >
+      {/* ─── Hero Features (3 large outcome-driven sections) ─── */}
+      <section id="features" className="mx-auto max-w-[1600px] px-4 pb-10 sm:px-6 lg:px-8">
         <Reveal className="text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            Powerful Features Built for Poultry Farms
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">
+            Platform
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+            Everything your farm business needs
           </h2>
-          <p className="mt-2 text-sm text-white/75 sm:text-base">
-            Everything you need to manage, analyze, and grow your farm operation.
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/75 sm:text-base">
+            Three pillars that replace the spreadsheets, WhatsApp threads, and guesswork.
           </p>
         </Reveal>
-        <motion.div
-          className="mt-12 space-y-10"
-          variants={staggerContainer}
-          initial="show"
-          animate="show"
-        >
-          {featureGroups.map((group) => (
-            <motion.section key={group.title} variants={revealVariants}>
-              <div className="flex items-center gap-2">
-                <span className="text-lg" aria-hidden>
-                  {group.icon}
-                </span>
-                <h3 className="text-2xl font-bold text-brand-yellow">{group.title}</h3>
-              </div>
-              <p className="mt-2 text-sm text-white/80">{group.description}</p>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                {group.features.map((item) => (
-                  <motion.article
-                    key={item.name}
-                    whileHover={{ y: -4 }}
-                    className="group rounded-xl p-[1px] bg-white/20 transition duration-300 hover:bg-gradient-to-r hover:from-brand-light hover:via-brand-yellow hover:to-brand-light"
-                  >
-                    <div className="h-full rounded-[11px] border border-transparent bg-[#223329] p-4 shadow-sm transition duration-300 group-hover:shadow-[0_10px_24px_rgba(0,0,0,0.24)]">
-                      <h4 className="text-sm font-bold text-white">{item.name}</h4>
-                      <p className="mt-2 text-xs leading-5 text-white/70 sm:text-sm">
-                        {item.summary}
-                      </p>
-                    </div>
-                  </motion.article>
-                ))}
-              </div>
-            </motion.section>
-          ))}
-        </motion.div>
       </section>
 
+      {heroFeatures.map((feature, idx) => (
+        <section key={feature.title} className="mx-auto max-w-[1600px] px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
+          <motion.div
+            className={`grid items-center gap-10 lg:grid-cols-2 ${idx % 2 === 1 ? "lg:[direction:rtl]" : ""}`}
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.15 }}
+          >
+            <motion.div variants={revealVariants} className={idx % 2 === 1 ? "lg:[direction:ltr]" : ""}>
+              <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.1em] ${
+                feature.badge === "New"
+                  ? "bg-brand-yellow/20 text-brand-yellow"
+                  : "bg-brand-light/15 text-brand-light"
+              }`}>
+                {feature.badge}
+              </span>
+              <h3 className="mt-4 text-2xl font-bold leading-tight text-white sm:text-3xl">
+                {feature.title}
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-white/80 sm:text-base">
+                {feature.description}
+              </p>
+              <ul className="mt-6 space-y-3">
+                {feature.highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-3 text-sm text-white/85">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-light/20 text-xs text-brand-light">✓</span>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div variants={revealVariants} className={idx % 2 === 1 ? "lg:[direction:ltr]" : ""}>
+              <div className="rounded-[24px] border border-white/15 bg-brand-canvas p-5 shadow-panel">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {feature.visual.map(([label, value]) => (
+                    <motion.div
+                      key={label}
+                      whileHover={{ y: -3, scale: 1.01 }}
+                      transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                      className="rounded-2xl border border-white/12 bg-[#223329] p-4"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
+                        {label}
+                      </p>
+                      <p className="mt-2 text-lg font-bold text-white">{value}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </section>
+      ))}
+
+      {/* ─── Full Feature Grid (expandable) ─── */}
+      <section className="mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
+        <Reveal className="text-center">
+          <button
+            type="button"
+            onClick={() => setShowAllFeatures((v) => !v)}
+            className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-brand-canvas px-6 py-3 text-sm font-semibold text-white transition hover:border-brand-yellow hover:text-brand-yellow"
+          >
+            {showAllFeatures ? "Hide detailed features" : "See all 30+ features"}
+            <ChevronDown className={`h-4 w-4 transition-transform ${showAllFeatures ? "rotate-180" : ""}`} />
+          </button>
+        </Reveal>
+
+        {showAllFeatures && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.35 }}
+            className="mt-10"
+          >
+            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {detailedFeatures.map((group) => (
+                <div key={group.title} className="rounded-2xl border border-white/15 bg-brand-canvas p-5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg" aria-hidden>{group.icon}</span>
+                    <h4 className="text-base font-bold text-brand-yellow">{group.title}</h4>
+                  </div>
+                  <ul className="mt-4 space-y-2.5">
+                    {group.features.map((f) => (
+                      <li key={f.name}>
+                        <p className="text-sm font-semibold text-white">{f.name}</p>
+                        <p className="text-xs leading-5 text-white/60">{f.summary}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </section>
+
+      {/* ─── Pricing ─── */}
       <section id="pricing" className="mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-8">
@@ -720,6 +779,7 @@ export function LandingPage() {
         </Reveal>
       </section>
 
+      {/* ─── Demo Form ─── */}
       <section id="demo" className="mx-auto w-full max-w-[620px] px-4 pb-20 sm:px-6 lg:pb-28">
         <Reveal className="rounded-[24px] border border-white/20 bg-brand-canvas p-6 shadow-panel sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">Request Demo</p>
@@ -814,6 +874,7 @@ export function LandingPage() {
         </Reveal>
       </section>
 
+      {/* ─── Footer ─── */}
       <footer className="bg-brand-canvas text-white">
         <div className="mx-auto grid max-w-[1600px] gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
           <div>
