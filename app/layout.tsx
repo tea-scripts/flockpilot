@@ -106,6 +106,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
         <GoogleAnalytics />
         {children}
