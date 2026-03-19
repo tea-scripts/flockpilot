@@ -3,7 +3,9 @@ export type LandingEventName =
   | "hero_pricing_click"
   | "nav_launch_pilot_click"
   | "pricing_tier_click"
-  | "demo_submit_success";
+  | "demo_submit_success"
+  | "cookie_consent_accepted"
+  | "cookie_consent_declined";
 
 export function trackLandingEvent(
   event: LandingEventName,
@@ -27,9 +29,10 @@ export function trackLandingEvent(
 
 declare global {
   interface Window {
+    dataLayer?: unknown[];
     gtag?: (
-      command: "event",
-      eventName: string,
+      command: string,
+      targetOrEventName: string,
       params?: Record<string, string | number | boolean>
     ) => void;
   }
