@@ -23,6 +23,8 @@ const tiers = [
     sites: "1",
     users: "3",
     bestFor: "Small farms getting structured for the first time",
+    cta: "Get Started",
+    ctaHref: "/signup",
     features: [
       "Batch analytics (KPIs, trends)",
       "Mortality + medication logging",
@@ -43,6 +45,8 @@ const tiers = [
     users: "10",
     bestFor: "Farms running consistent cycles and managing costs",
     featured: true,
+    cta: "Get Started",
+    ctaHref: "/signup",
     features: [
       "Everything in Starter, plus:",
       "Flight Deck (live ops cockpit)",
@@ -63,6 +67,8 @@ const tiers = [
     sites: "10",
     users: "30",
     bestFor: "Multi-site operations that need control and accountability",
+    cta: "Get Started",
+    ctaHref: "/signup",
     features: [
       "Everything in Growth, plus:",
       "Multi-batch comparisons",
@@ -82,6 +88,8 @@ const tiers = [
     sites: "Unlimited",
     users: "Unlimited",
     bestFor: "Large operators, integrators, and farm groups",
+    cta: "Contact Sales",
+    ctaHref: "mailto:info@enroagro.com?subject=FlockPilot Enterprise Inquiry",
     features: [
       "Everything in Scale, plus:",
       "Unlimited AI messages",
@@ -127,8 +135,16 @@ export default function PricingPage() {
             Simple, transparent <span className="text-brand-light">pricing</span>
           </h1>
           <p className="text-lg text-white/70">
-            Pay for what you need. Start small and scale as your farm grows. All plans include a 14-day pilot period. Annual billing saves 15%.
+            Pay for what you need. Start small and scale as your farm grows. Annual billing saves 15%.
           </p>
+          <div className="mt-6">
+            <Link
+              href="/signup?trial=1"
+              className="rounded-xl border border-brand-light/40 px-6 py-2.5 text-sm font-semibold text-brand-light transition hover:bg-brand-light/10"
+            >
+              Or start with a 7-day free trial
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -184,14 +200,14 @@ export default function PricingPage() {
               </ul>
 
               <Link
-                href="/#demo"
+                href={tier.ctaHref}
                 className={`mt-auto block rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition ${
                   tier.featured
                     ? "bg-brand-light text-brand-deep hover:opacity-90"
                     : "border border-white/20 text-white hover:bg-white/10"
                 }`}
               >
-                {tier.price === "Custom" ? "Contact Sales" : "Request Demo"}
+                {tier.cta}
               </Link>
             </article>
           ))}
@@ -230,10 +246,10 @@ export default function PricingPage() {
             View FAQ
           </Link>
           <Link
-            href="/#demo"
+            href="/signup"
             className="rounded-xl bg-brand-light px-6 py-2.5 text-sm font-semibold text-brand-deep transition hover:opacity-90"
           >
-            Request a Demo
+            Get Started
           </Link>
         </div>
       </section>

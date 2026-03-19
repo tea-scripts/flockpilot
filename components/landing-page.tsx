@@ -27,6 +27,7 @@ type PricingTier = {
   subtitle: string;
   features: string[];
   cta: string;
+  ctaHref: string;
   bestFor: string;
   featured?: boolean;
 };
@@ -209,7 +210,8 @@ const pricingTiers: PricingTier[] = [
       "Exports (CSV)",
       "Email support"
     ],
-    cta: "Start Starter",
+    cta: "Get Started Free",
+    ctaHref: "/signup",
     bestFor: "500–2,000 birds, first-time structured tracking."
   },
   {
@@ -229,7 +231,8 @@ const pricingTiers: PricingTier[] = [
       "AI Assistant (100 messages/month)",
       "Financial statements (P&L, balance sheet)"
     ],
-    cta: "Start Growth",
+    cta: "Get Started",
+    ctaHref: "/signup",
     bestFor: "2,000–10,000 birds, multiple batches, owner + farm manager + accounts."
   },
   {
@@ -249,7 +252,8 @@ const pricingTiers: PricingTier[] = [
       "Priority support (business hours)",
       "Dedicated onboarding session"
     ],
-    cta: "Start Scale",
+    cta: "Get Started",
+    ctaHref: "/signup",
     bestFor: "10,000–50,000 birds, fast-growing farms, structured teams.",
     featured: true
   },
@@ -267,6 +271,7 @@ const pricingTiers: PricingTier[] = [
       "Onsite onboarding available"
     ],
     cta: "Contact Sales",
+    ctaHref: "mailto:info@enroagro.com?subject=FlockPilot Enterprise Inquiry",
     bestFor: "50,000+ birds, multiple companies/tenants, compliance-heavy operations."
   }
 ];
@@ -694,7 +699,7 @@ export function LandingPage() {
 
                 <div className="mt-4 flex flex-1 flex-col">
                   <a
-                    href="#demo"
+                    href={tier.ctaHref}
                     onClick={() =>
                       trackLandingEvent("pricing_tier_click", {
                         tier: tier.name,
