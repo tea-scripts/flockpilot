@@ -51,10 +51,11 @@ export async function signupAction(
   }
 
   // Step 1: Register (creates PENDING tenant)
+  const { trial, planCode, ...registerPayload } = parsed.data;
   const registerRes = await fetch(`${API_URL}/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(parsed.data),
+    body: JSON.stringify(registerPayload),
   });
 
   if (!registerRes.ok) {
@@ -70,7 +71,7 @@ export async function signupAction(
   };
 
   // Step 2a: If trial, provision 7-day trial immediately
-  if (parsed.data.trial === "1") {
+  if (trial === "1") {
     const trialRes = await fetch(`${API_URL}/billing/provision-trial`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -91,7 +92,7 @@ export async function signupAction(
   }
 
   // Step 2b: If planCode provided, initiate Paystack checkout
-  if (parsed.data.planCode) {
+  if (planCode) {
     const checkoutRes = await fetch(`${API_URL}/billing/checkout`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -99,7 +100,7 @@ export async function signupAction(
         tenantId,
         userId,
         email,
-        planCode: parsed.data.planCode,
+        planCode,
       }),
     });
 
