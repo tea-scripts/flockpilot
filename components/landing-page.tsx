@@ -411,7 +411,7 @@ export function LandingPage() {
               Features
             </a>
             <a
-              href="#pricing"
+              href="/pricing"
               className="hidden text-sm font-medium text-white/80 transition hover:text-white sm:inline"
             >
               Pricing
@@ -641,6 +641,9 @@ export function LandingPage() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">Pricing</p>
               <h2 className="mt-3 text-3xl font-bold text-white">Plans for every farm growth stage</h2>
+              <a href="/signup?trial=1" className="mt-3 inline-block text-sm font-medium text-brand-light transition hover:text-brand-yellow">
+                Or start with a 7-day free trial &rarr;
+              </a>
             </div>
             <div className="inline-flex rounded-full border border-brand-light/60 bg-brand-canvas p-1.5 text-sm font-semibold">
               <button
