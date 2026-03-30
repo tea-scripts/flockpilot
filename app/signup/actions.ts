@@ -70,7 +70,7 @@ export async function signupAction(
     slug: string;
   };
 
-  // Step 2a: If trial, provision 7-day trial immediately
+  // Step 2a: If trial, provision 14-day trial immediately
   if (trial === "1") {
     const trialRes = await fetch(`${API_URL}/billing/provision-trial`, {
       method: "POST",
@@ -87,7 +87,7 @@ export async function signupAction(
 
     return {
       ok: true,
-      message: "Your 7-day free trial is active! Check your email for login credentials.",
+      message: "Your 14-day free trial is active! Check your email for login credentials.",
     };
   }
 

@@ -54,11 +54,11 @@ export default async function SignupPage({
         <div className="mx-auto max-w-md">
           <div className="mb-8 text-center">
             <h1 className="mb-3 text-3xl font-extrabold tracking-tight">
-              {isTrial ? "Start your 7-day free trial" : "Create your FlockPilot account"}
+              {isTrial ? "Start your 14-day free trial" : "Create your FlockPilot account"}
             </h1>
             <p className="text-sm text-white/60">
               {isTrial
-                ? "No payment required. Full access for 7 days."
+                ? "No payment required. Full access for 14 days."
                 : "Set up your farm in minutes. You'll select a plan after registration."}
             </p>
           </div>
