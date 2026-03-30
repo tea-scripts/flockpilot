@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion, type Variants } from "framer-motion";
-import { Facebook, Instagram, Linkedin, X, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, X, ChevronDown } from "lucide-react";
 import { requestDemoAction, type DemoFormState } from "@/app/actions";
 import { trackLandingEvent } from "@/lib/analytics";
 
@@ -196,8 +196,8 @@ const detailedFeatures: FeatureGroup[] = [
 const pricingTiers: PricingTier[] = [
   {
     name: "Starter",
-    monthly: "₦45,000/month",
-    annual: "₦459,000/year",
+    monthly: "₦25,000/month",
+    annual: "₦255,000/year",
     subtitle: "For pilots and small farms getting disciplined.",
     features: [
       "Up to 2,000 active birds",
@@ -216,8 +216,8 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: "Growth",
-    monthly: "₦120,000/month",
-    annual: "₦1,224,000/year",
+    monthly: "₦50,000/month",
+    annual: "₦510,000/year",
     subtitle: "For farms running consistent cycles and managing costs.",
     features: [
       "Up to 10,000 active birds",
@@ -237,8 +237,8 @@ const pricingTiers: PricingTier[] = [
   },
   {
     name: "Scale",
-    monthly: "₦300,000/month",
-    annual: "₦3,060,000/year",
+    monthly: "₦120,000/month",
+    annual: "₦1,224,000/year",
     subtitle: "For multi-site operations that need control and accountability.",
     features: [
       "Up to 50,000 active birds",
@@ -375,6 +375,13 @@ export function LandingPage() {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
   const [state, formAction] = useActionState(requestDemoAction, initialState);
   const hasTrackedSuccess = useRef(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const pricing = useMemo(
     () =>
@@ -642,7 +649,7 @@ export function LandingPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">Pricing</p>
               <h2 className="mt-3 text-3xl font-bold text-white">Plans for every farm growth stage</h2>
               <a href="/signup?trial=1" className="mt-3 inline-block text-sm font-medium text-brand-light transition hover:text-brand-yellow">
-                Or start with a 7-day free trial &rarr;
+                Or start with a 14-day free trial &rarr;
               </a>
             </div>
             <div className="inline-flex rounded-full border border-brand-light/60 bg-brand-canvas p-1.5 text-sm font-semibold">
@@ -864,6 +871,18 @@ export function LandingPage() {
             <div className="sm:col-span-2">
               <SubmitButton />
             </div>
+            <div className="sm:col-span-2 text-center">
+              <span className="text-xs text-white/40">or</span>
+            </div>
+            <a
+              href="https://wa.me/2348162420463"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sm:col-span-2 flex items-center justify-center gap-2 rounded-xl border border-[#25D366]/40 bg-[#25D366]/10 px-4 py-2.5 text-sm font-semibold text-[#25D366] transition hover:bg-[#25D366]/20"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat on WhatsApp
+            </a>
           </form>
 
           {state.message ? (
@@ -882,6 +901,25 @@ export function LandingPage() {
         </Reveal>
       </section>
 
+      {/* ─── Trusted By ─── */}
+      <section className="border-t border-white/10 bg-brand-deep px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+            Trusted by farms across Nigeria
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-10">
+            <img
+              src="/enro-logo.png"
+              alt="Enro Agro Limited"
+              className="h-16 w-auto opacity-90"
+            />
+          </div>
+          <p className="mt-8 text-sm text-white/50">
+            More farms joining every month. Your farm could be next.
+          </p>
+        </div>
+      </section>
+
       {/* ─── Footer ─── */}
       <footer className="bg-brand-canvas text-white">
         <div className="mx-auto grid max-w-[1600px] gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
@@ -897,6 +935,17 @@ export function LandingPage() {
             <p className="mt-1 text-sm">
               <a href="tel:+2348162420463" className="text-white/90 hover:text-brand-yellow">
                 +2348162420463
+              </a>
+            </p>
+            <p className="mt-2 text-sm">
+              <a
+                href="https://wa.me/2348162420463"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/90 hover:text-brand-yellow"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>Chat on WhatsApp</span>
               </a>
             </p>
           </div>
@@ -920,44 +969,34 @@ export function LandingPage() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-yellow">Socials</h3>
             <div className="mt-4 space-y-3 text-sm">
               <a
-                href="https://x.com/enroagro"
+                href="https://x.com/flockpilot"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Enro Agro on X"
+                aria-label="Follow FlockPilot on X"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <X className="h-4 w-4" />
-                <span>@enroagro</span>
+                <span>@flockpilot</span>
               </a>
               <a
-                href="https://instagram.com/enroagro"
+                href="https://instagram.com/flockpilot"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Enro Agro on Instagram"
+                aria-label="Follow FlockPilot on Instagram"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <Instagram className="h-4 w-4" />
-                <span>@enroagro</span>
+                <span>@flockpilot</span>
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=61587126820939"
+                href="https://facebook.com/FlockPilot"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Enro Agro Limited on Facebook"
+                aria-label="Follow FlockPilot on Facebook"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <Facebook className="h-4 w-4" />
-                <span>Enro Agro Limited</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/enro-agro-limited/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow Enro Agro Limited on LinkedIn"
-                className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
-              >
-                <Linkedin className="h-4 w-4" />
-                <span>Enro Agro Limited</span>
+                <span>FlockPilot</span>
               </a>
             </div>
           </div>
@@ -968,6 +1007,19 @@ export function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Back to top */}
+      {showBackToTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-brand-canvas/90 text-white shadow-lg backdrop-blur transition hover:bg-brand-light/20 hover:text-brand-light"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+            <path d="M18 15l-6-6-6 6" />
+          </svg>
+        </button>
+      )}
     </main>
   );
 }

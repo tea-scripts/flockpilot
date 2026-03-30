@@ -21,8 +21,9 @@ const organizationStructuredData = {
     addressCountry: "NG"
   },
   sameAs: [
-    "https://x.com/enroagro",
-    "https://instagram.com/enroagro"
+    "https://x.com/flockpilot",
+    "https://instagram.com/flockpilot",
+    "https://facebook.com/FlockPilot"
   ]
 };
 
@@ -35,29 +36,29 @@ const productStructuredData = {
   operatingSystem: "Web",
   offers: {
     "@type": "AggregateOffer",
-    lowPrice: "45000",
-    highPrice: "300000",
+    lowPrice: "25000",
+    highPrice: "120000",
     priceCurrency: "NGN",
     offerCount: 4,
     offers: [
       {
         "@type": "Offer",
         name: "Starter",
-        price: "45000",
+        price: "25000",
         priceCurrency: "NGN",
         description: "Up to 2,000 birds, 1 farm site, 3 users"
       },
       {
         "@type": "Offer",
         name: "Growth",
-        price: "120000",
+        price: "50000",
         priceCurrency: "NGN",
         description: "Up to 10,000 birds, 3 farm sites, 10 users, AI assistant (100 msgs/mo)"
       },
       {
         "@type": "Offer",
         name: "Scale",
-        price: "300000",
+        price: "120000",
         priceCurrency: "NGN",
         description: "Up to 50,000 birds, 10 farm sites, 30 users, AI assistant (300 msgs/mo)"
       }
