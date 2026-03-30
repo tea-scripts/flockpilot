@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Pricing — Plans from ₦45,000/month",
+  title: "Pricing — Plans from ₦25,000/month",
   description:
-    "FlockPilot pricing: Starter ₦45,000/mo (2,000 birds), Growth ₦120,000/mo (10,000 birds), Scale ₦300,000/mo (50,000 birds). 15% off annual billing. AI assistant included on Growth and above.",
+    "FlockPilot pricing: Starter ₦25,000/mo (2,000 birds), Growth ₦50,000/mo (10,000 birds), Scale ₦120,000/mo (50,000 birds). 15% off annual billing. AI assistant included on Growth and above.",
   alternates: { canonical: "https://flockpilot.enroagro.com/pricing" },
   openGraph: {
-    title: "FlockPilot Pricing — Poultry Farm ERP from ₦45,000/month",
+    title: "FlockPilot Pricing — Poultry Farm ERP from ₦25,000/month",
     description:
       "Transparent pricing for Nigerian poultry farmers. Starter, Growth, Scale, and Enterprise plans. 15% off annual billing.",
     url: "https://flockpilot.enroagro.com/pricing",
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 const tiers = [
   {
     name: "Starter",
-    price: "₦45,000",
-    annual: "₦459,000/yr (save 15%)",
+    price: "₦25,000",
+    annual: "₦255,000/yr (save 15%)",
     birds: "2,000",
     sites: "1",
     users: "3",
@@ -38,8 +38,8 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "₦120,000",
-    annual: "₦1,224,000/yr (save 15%)",
+    price: "₦50,000",
+    annual: "₦510,000/yr (save 15%)",
     birds: "10,000",
     sites: "3",
     users: "10",
@@ -61,8 +61,8 @@ const tiers = [
   },
   {
     name: "Scale",
-    price: "₦300,000",
-    annual: "₦3,060,000/yr (save 15%)",
+    price: "₦120,000",
+    annual: "₦1,224,000/yr (save 15%)",
     birds: "50,000",
     sites: "10",
     users: "30",
@@ -142,7 +142,7 @@ export default function PricingPage() {
               href="/signup?trial=1"
               className="rounded-xl border border-brand-light/40 px-6 py-2.5 text-sm font-semibold text-brand-light transition hover:bg-brand-light/10"
             >
-              Or start with a 7-day free trial
+              Or start with a 14-day free trial
             </Link>
           </div>
         </div>
