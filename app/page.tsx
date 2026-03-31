@@ -5,14 +5,14 @@ const websiteStructuredData = {
   "@type": "WebSite",
   name: "FlockPilot",
   alternateName: "Flock Pilot",
-  url: "https://flockpilot.enroagro.com"
+  url: "https://flockpilot.com"
 };
 
 const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Enro Agro Limited",
-  url: "https://flockpilot.enroagro.com",
+  url: "https://flockpilot.com",
   email: "info@enroagro.com",
   telephone: "+2348162420463",
   address: {
@@ -21,9 +21,9 @@ const organizationStructuredData = {
     addressCountry: "NG"
   },
   sameAs: [
-    "https://x.com/flockpilot",
-    "https://instagram.com/flockpilot",
-    "https://facebook.com/FlockPilot"
+    "https://x.com/enroagro",
+    "https://instagram.com/enroagro",
+    "https://facebook.com/EnroAgro"
   ]
 };
 
@@ -68,7 +68,7 @@ const productStructuredData = {
     "FlockPilot gives poultry farmers a real-time operations-and-finance cockpit that tracks flock health, feed efficiency, unit economics, and includes an AI assistant for instant farm insights.",
   featureList:
     "Farm operations tracking, Feed consumption analytics, Mortality analysis, Flock sales management, Accounts payable, Payroll with payslips, Employee loans, Chart of accounts, Financial statements, AI-powered assistant",
-  screenshot: "https://flockpilot.enroagro.com/opengraph-image",
+  screenshot: "https://flockpilot.com/opengraph-image",
   provider: {
     "@type": "Organization",
     name: "Enro Agro Limited"
@@ -92,7 +92,7 @@ const faqStructuredData = {
       name: "How much does FlockPilot cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "FlockPilot starts at ₦45,000/month for the Starter plan (up to 2,000 birds). Growth is ₦120,000/month (10,000 birds), Scale is ₦300,000/month (50,000 birds), and Enterprise pricing is custom. Annual billing saves 15%."
+        text: "FlockPilot starts at ₦25,000/month for the Starter plan (up to 2,000 birds). Growth is ₦50,000/month (10,000 birds), Scale is ₦120,000/month (50,000 birds), and Enterprise pricing is custom. Annual billing saves 15%."
       }
     },
     {

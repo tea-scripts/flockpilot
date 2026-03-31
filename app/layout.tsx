@@ -11,7 +11,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flockpilot.enroagro.com"),
+  metadataBase: new URL("https://flockpilot.com"),
   title: {
     default: "FlockPilot | Poultry Farm Management Software Nigeria — ERP by Enro Agro",
     template: "%s | FlockPilot"
@@ -62,10 +62,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FlockPilot — Poultry Farm Management Software for Nigeria & Africa",
     description:
-      "All-in-one poultry ERP: farm ops, feed tracking, financials, payroll, and AI assistant. From ₦45,000/month. Built for Nigerian poultry farmers by Enro Agro.",
+      "All-in-one poultry ERP: farm ops, feed tracking, financials, payroll, and AI assistant. From ₦25,000/month. Built for Nigerian poultry farmers by Enro Agro.",
     type: "website",
     locale: "en_NG",
-    url: "https://flockpilot.enroagro.com",
+    url: "https://flockpilot.com",
     siteName: "FlockPilot",
     images: [
       {
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     images: ["/twitter-image"]
   },
   alternates: {
-    canonical: "https://flockpilot.enroagro.com"
+    canonical: "https://flockpilot.com"
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || undefined

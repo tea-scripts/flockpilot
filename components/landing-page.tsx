@@ -969,34 +969,34 @@ export function LandingPage() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-brand-yellow">Socials</h3>
             <div className="mt-4 space-y-3 text-sm">
               <a
-                href="https://x.com/flockpilot"
+                href="https://x.com/enroagro"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow FlockPilot on X"
+                aria-label="Follow Enro Agro on X"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <X className="h-4 w-4" />
-                <span>@flockpilot</span>
+                <span>@enroagro</span>
               </a>
               <a
-                href="https://instagram.com/flockpilot"
+                href="https://instagram.com/enroagro"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow FlockPilot on Instagram"
+                aria-label="Follow Enro Agro on Instagram"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <Instagram className="h-4 w-4" />
-                <span>@flockpilot</span>
+                <span>@enroagro</span>
               </a>
               <a
-                href="https://facebook.com/FlockPilot"
+                href="https://facebook.com/EnroAgro"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow FlockPilot on Facebook"
+                aria-label="Follow Enro Agro on Facebook"
                 className="flex items-center gap-3 text-white/90 hover:text-brand-yellow"
               >
                 <Facebook className="h-4 w-4" />
-                <span>FlockPilot</span>
+                <span>Enro Agro</span>
               </a>
             </div>
           </div>

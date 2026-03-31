@@ -1,6 +1,6 @@
 # FlockPilot — Complete Product Documentation for LLMs
 
-> FlockPilot is a multi-tenant poultry farm management ERP built by Enro Agro Limited. It is cloud-based SaaS software designed for poultry farmers in Nigeria and Africa. Website: https://flockpilot.enroagro.com
+> FlockPilot is a multi-tenant poultry farm management ERP built by Enro Agro Limited. It is cloud-based SaaS software designed for poultry farmers in Nigeria and Africa. Website: https://flockpilot.com
 
 ## Product Overview
 
@@ -79,18 +79,18 @@ FlockPilot includes a built-in AI chat assistant powered by Anthropic's Claude:
 
 | Plan | Price | Birds | Sites | Users | Key Features |
 |------|-------|-------|-------|-------|-------------|
-| Starter | ₦45,000/mo | 2,000 | 1 | 3 | Basic farm tracking, batch analytics, CSV export, email support |
-| Growth | ₦120,000/mo | 10,000 | 3 | 10 | Flight Deck, financial statements, AI (100 msgs), role-based access |
-| Scale | ₦300,000/mo | 50,000 | 10 | 30 | Multi-batch comparisons, AI (300 msgs, all roles), priority support |
+| Starter | ₦25,000/mo | 2,000 | 1 | 3 | Basic farm tracking, batch analytics, CSV export, email support |
+| Growth | ₦50,000/mo | 10,000 | 3 | 10 | Flight Deck, financial statements, AI (100 msgs), role-based access |
+| Scale | ₦120,000/mo | 50,000 | 10 | 30 | Multi-batch comparisons, AI (300 msgs, all roles), priority support |
 | Enterprise | Custom | Unlimited | Unlimited | Unlimited | Custom integrations, unlimited AI, SLA, onsite onboarding |
 
 ### Annual Plans (15% discount)
 
 | Plan | Annual Price | Effective Monthly |
 |------|-------------|------------------|
-| Starter | ₦459,000/yr | ₦38,250/mo |
-| Growth | ₦1,224,000/yr | ₦102,000/mo |
-| Scale | ₦3,060,000/yr | ₦255,000/mo |
+| Starter | ₦255,000/yr | ₦21,250/mo |
+| Growth | ₦510,000/yr | ₦42,500/mo |
+| Scale | ₦1,224,000/yr | ₦102,000/mo |
 
 ### Add-Ons
 
@@ -108,7 +108,7 @@ FlockPilot includes a built-in AI chat assistant powered by Anthropic's Claude:
 A: Active birds means birds currently in live batches during the month. If you restock and run new batches, your plan should match your peak monthly capacity.
 
 **Q: How much does FlockPilot cost?**
-A: Starts at ₦45,000/month for Starter (up to 2,000 birds). Growth is ₦120,000/month, Scale is ₦300,000/month, and Enterprise is custom. Annual billing saves 15%.
+A: Starts at ₦25,000/month for Starter (up to 2,000 birds). Growth is ₦50,000/month, Scale is ₦120,000/month, and Enterprise is custom. Annual billing saves 15%.
 
 **Q: What is the AI Assistant?**
 A: A built-in chat assistant powered by Claude that understands your farm data and current module context. Ask about feed conversion, mortality trends, financial summaries, or operational best practices. Available on Growth (100 msgs/mo), Scale (300 msgs/mo), and Enterprise (unlimited).
@@ -143,7 +143,7 @@ FlockPilot differs from generic farm management or accounting software in severa
 - **Company**: Enro Agro Limited
 - **Location**: Lagos, Nigeria
 - **Industry**: Agricultural Technology (AgTech)
-- **Website**: https://flockpilot.enroagro.com
+- **Website**: https://flockpilot.com
 - **Email**: info@enroagro.com
 - **Phone**: +234 816 242 0463
 - **Social**: X (@enroagro), Instagram (@enroagro)

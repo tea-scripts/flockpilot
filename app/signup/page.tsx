@@ -5,8 +5,8 @@ import { SignupForm } from "./signup-form";
 export const metadata: Metadata = {
   title: "Sign Up — Start Managing Your Poultry Farm",
   description:
-    "Create your FlockPilot account. Manage flock batches, feed, financials, and more. Plans from ₦45,000/month.",
-  alternates: { canonical: "https://flockpilot.enroagro.com/signup" },
+    "Create your FlockPilot account. Manage flock batches, feed, financials, and more. Plans from ₦25,000/month.",
+  alternates: { canonical: "https://flockpilot.com/signup" },
 };
 
 const API_URL = process.env.FLOCKPILOT_API_URL || "https://api.internal.enroagro.com/api";

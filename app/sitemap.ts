@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://flockpilot.enroagro.com";
-const lastModified = new Date("2026-03-19");
+const siteUrl = "https://flockpilot.com";
+const lastModified = new Date("2026-03-31");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

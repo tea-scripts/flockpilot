@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Features — 30+ Poultry Farm Management Modules",
   description:
     "FlockPilot includes farm operations, feed tracking, mortality analysis, double-entry accounting, payroll, employee loans, AI assistant, and 30+ more modules built for poultry farmers in Nigeria.",
-  alternates: { canonical: "https://flockpilot.enroagro.com/features" },
+  alternates: { canonical: "https://flockpilot.com/features" },
   openGraph: {
     title: "FlockPilot Features — 30+ Poultry Farm Management Modules",
     description:
       "Farm ops, feed tracking, financials, payroll, HR, loans, AI assistant — everything a poultry farm needs in one platform.",
-    url: "https://flockpilot.enroagro.com/features",
+    url: "https://flockpilot.com/features",
   },
 };
 

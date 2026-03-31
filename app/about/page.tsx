@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "About — Enro Agro Limited",
   description:
     "FlockPilot is built by Enro Agro Limited, a Lagos-based agricultural technology company. We build software that helps poultry farmers in Nigeria and Africa run more profitable operations.",
-  alternates: { canonical: "https://flockpilot.enroagro.com/about" },
+  alternates: { canonical: "https://flockpilot.com/about" },
   openGraph: {
     title: "About FlockPilot — Built by Enro Agro Limited",
     description:
       "Lagos-based AgTech company building software for poultry farmers across Nigeria and Africa.",
-    url: "https://flockpilot.enroagro.com/about",
+    url: "https://flockpilot.com/about",
   },
 };
 

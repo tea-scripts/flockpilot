@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "Pricing — Plans from ₦25,000/month",
   description:
     "FlockPilot pricing: Starter ₦25,000/mo (2,000 birds), Growth ₦50,000/mo (10,000 birds), Scale ₦120,000/mo (50,000 birds). 15% off annual billing. AI assistant included on Growth and above.",
-  alternates: { canonical: "https://flockpilot.enroagro.com/pricing" },
+  alternates: { canonical: "https://flockpilot.com/pricing" },
   openGraph: {
     title: "FlockPilot Pricing — Poultry Farm ERP from ₦25,000/month",
     description:
       "Transparent pricing for Nigerian poultry farmers. Starter, Growth, Scale, and Enterprise plans. 15% off annual billing.",
-    url: "https://flockpilot.enroagro.com/pricing",
+    url: "https://flockpilot.com/pricing",
   },
 };
 

@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "AI Assistant — Context-Aware Chat for Poultry Farmers",
   description:
     "FlockPilot AI is a built-in chat assistant powered by Claude that understands your farm data. Ask about feed conversion, mortality trends, financial reports, and get instant, practical answers.",
-  alternates: { canonical: "https://flockpilot.enroagro.com/ai-assistant" },
+  alternates: { canonical: "https://flockpilot.com/ai-assistant" },
   openGraph: {
     title: "FlockPilot AI Assistant — Ask Your Farm a Question",
     description:
       "Built-in AI chat that understands your poultry operation. Context-aware answers about farm ops, finance, payroll, and more.",
-    url: "https://flockpilot.enroagro.com/ai-assistant",
+    url: "https://flockpilot.com/ai-assistant",
   },
 };
 

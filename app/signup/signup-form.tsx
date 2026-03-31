@@ -16,9 +16,9 @@ const tierLabels: Record<string, string> = {
 };
 
 const tierPrices: Record<string, { monthly: string; annual: string }> = {
-  STARTER: { monthly: "₦45,000/mo", annual: "₦459,000/yr" },
-  GROWTH: { monthly: "₦120,000/mo", annual: "₦1,224,000/yr" },
-  SCALE: { monthly: "₦300,000/mo", annual: "₦3,060,000/yr" },
+  STARTER: { monthly: "₦25,000/mo", annual: "₦255,000/yr" },
+  GROWTH: { monthly: "₦50,000/mo", annual: "₦510,000/yr" },
+  SCALE: { monthly: "₦120,000/mo", annual: "₦1,224,000/yr" },
 };
 
 function PlanDropdown({

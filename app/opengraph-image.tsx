@@ -110,7 +110,7 @@ export default function OgImage() {
         >
           {[
             { value: "30+", label: "Modules" },
-            { value: "₦45K", label: "From/month" },
+            { value: "₦25K", label: "From/month" },
             { value: "99.9%", label: "Uptime" },
             { value: "AI", label: "Built-in" },
           ].map((stat) => (
@@ -158,7 +158,7 @@ export default function OgImage() {
             fontSize: "16px",
           }}
         >
-          <span style={{ fontWeight: 600 }}>flockpilot.enroagro.com</span>
+          <span style={{ fontWeight: 600 }}>flockpilot.com</span>
           <span style={{ color: "#22C55E40" }}>|</span>
           <span style={{ color: "#86EFAC" }}>by Enro Agro Limited</span>
         </div>
