@@ -963,6 +963,15 @@ export function LandingPage() {
                 Request Demo
               </a>
             </div>
+            <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.12em] text-brand-yellow">Legal</h3>
+            <div className="mt-4 flex flex-col gap-2 text-sm">
+              <a href="/privacy-policy" className="text-white/90 transition hover:text-brand-yellow">
+                Privacy Policy
+              </a>
+              <a href="/terms-and-conditions" className="text-white/90 transition hover:text-brand-yellow">
+                Terms &amp; Conditions
+              </a>
+            </div>
           </div>
 
           <div>
