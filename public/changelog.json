@@ -1,0 +1,78 @@
+[
+  {
+    "version": "0.4.0",
+    "date": "2026-04-03",
+    "entries": [
+      {
+        "type": "fixed",
+        "text": "Cash flow statement no longer errors on unclassified items"
+      },
+      {
+        "type": "fixed",
+        "text": "Staging and platform subdomains now correctly reserved"
+      }
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "date": "2026-04-01",
+    "entries": [
+      {
+        "type": "improved",
+        "text": "Updated error monitoring for better issue tracking"
+      },
+      {
+        "type": "fixed",
+        "text": "API now correctly restricts access to FlockPilot domains only"
+      },
+      {
+        "type": "fixed",
+        "text": "Database connection failures no longer crash audit logging"
+      }
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "date": "2026-03-30",
+    "entries": [
+      {
+        "type": "fixed",
+        "text": "Critical security update applied to Next.js framework"
+      },
+      {
+        "type": "fixed",
+        "text": "Chat dropdown menus now readable in light mode"
+      },
+      {
+        "type": "fixed",
+        "text": "Self-service pages (profile, payslips, notifications) now accessible to all roles"
+      }
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-03-28",
+    "entries": [
+      {
+        "type": "improved",
+        "text": "Finance status cards now show net liability and credit-noted entries"
+      },
+      {
+        "type": "improved",
+        "text": "Tenant control page now has summary cards, filters, and chips"
+      },
+      {
+        "type": "improved",
+        "text": "Admin user fields added to Create Tenant form"
+      },
+      {
+        "type": "improved",
+        "text": "Trial duration extended from 7 to 14 days"
+      },
+      {
+        "type": "fixed",
+        "text": "Trial provisioning no longer crashes when admin user is missing"
+      }
+    ]
+  }
+]

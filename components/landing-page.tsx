@@ -424,6 +424,12 @@ export function LandingPage() {
               Pricing
             </a>
             <a
+              href="/changelog"
+              className="hidden text-sm font-medium text-white/80 transition hover:text-white sm:inline"
+            >
+              Changelog
+            </a>
+            <a
               href="#demo"
               onClick={() => trackLandingEvent("nav_launch_pilot_click")}
               className="rounded-full border border-brand-light/60 bg-brand-canvas px-4 py-2 text-xs font-semibold tracking-wide text-white backdrop-blur-sm transition hover:border-brand-yellow hover:text-brand-yellow"
@@ -961,6 +967,9 @@ export function LandingPage() {
               </a>
               <a href="#demo" className="text-white/90 transition hover:text-brand-yellow">
                 Request Demo
+              </a>
+              <a href="/changelog" className="text-white/90 transition hover:text-brand-yellow">
+                Changelog
               </a>
             </div>
             <h3 className="mt-8 text-sm font-semibold uppercase tracking-[0.12em] text-brand-yellow">Legal</h3>
