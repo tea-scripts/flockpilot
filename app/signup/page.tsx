@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://flockpilot.com/signup" },
 };
 
-const API_URL = process.env.FLOCKPILOT_API_URL || "https://api.internal.enroagro.com/api";
+const API_URL = process.env.FLOCKPILOT_API_URL || "https://api.flockpilot.com/api";
 
 async function getPlans() {
   try {

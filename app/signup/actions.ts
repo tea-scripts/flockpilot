@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-const API_URL = process.env.FLOCKPILOT_API_URL || "https://api.internal.enroagro.com/api";
+const API_URL = process.env.FLOCKPILOT_API_URL || "https://api.flockpilot.com/api";
 
 const signupSchema = z.object({
   organizationName: z.string().trim().min(2, "Organization name is required (min 2 characters)."),
@@ -52,11 +52,17 @@ export async function signupAction(
 
   // Step 1: Register (creates PENDING tenant)
   const { trial, planCode, ...registerPayload } = parsed.data;
-  const registerRes = await fetch(`${API_URL}/auth/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(registerPayload),
-  });
+
+  let registerRes: Response;
+  try {
+    registerRes = await fetch(`${API_URL}/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(registerPayload),
+    });
+  } catch {
+    return { ok: false, message: "Unable to reach the server. Please try again later." };
+  }
 
   if (!registerRes.ok) {
     const body = await registerRes.json().catch(() => ({ message: "Registration failed" }));
@@ -72,16 +78,24 @@ export async function signupAction(
 
   // Step 2a: If trial, provision 14-day trial immediately
   if (trial === "1") {
-    const trialRes = await fetch(`${API_URL}/billing/provision-trial`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tenantId }),
-    });
+    let trialRes: Response;
+    try {
+      trialRes = await fetch(`${API_URL}/billing/provision-trial`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tenantId }),
+      });
+    } catch {
+      return {
+        ok: true,
+        message: "Account created but trial setup failed. Please contact support at info@flockpilot.com.",
+      };
+    }
 
     if (!trialRes.ok) {
       return {
         ok: true,
-        message: "Account created but trial setup failed. Please contact support at info@enroagro.com.",
+        message: "Account created but trial setup failed. Please contact support at info@flockpilot.com.",
       };
     }
 
@@ -93,16 +107,24 @@ export async function signupAction(
 
   // Step 2b: If planCode provided, initiate Paystack checkout
   if (planCode) {
-    const checkoutRes = await fetch(`${API_URL}/billing/checkout`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        tenantId,
-        userId,
-        email,
-        planCode,
-      }),
-    });
+    let checkoutRes: Response;
+    try {
+      checkoutRes = await fetch(`${API_URL}/billing/checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          tenantId,
+          userId,
+          email,
+          planCode,
+        }),
+      });
+    } catch {
+      return {
+        ok: true,
+        message: "Account created! However, we could not start checkout. Please contact support.",
+      };
+    }
 
     if (!checkoutRes.ok) {
       return {
