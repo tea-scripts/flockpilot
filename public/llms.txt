@@ -34,7 +34,7 @@ Built with NestJS, Next.js, PostgreSQL, and Prisma. Deployed on Render. Multi-te
 ## Contact
 
 - Website: https://flockpilot.com
-- Email: info@enroagro.com
+- Email: info@flockpilot.com
 - Phone: +234 816 242 0463
 - Company: Enro Agro Limited, Lagos, Nigeria
 

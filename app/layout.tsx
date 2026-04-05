@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   category: "Agriculture Technology",
   creator: "Enro Agro Limited",
   publisher: "Enro Agro Limited",
-  authors: [{ name: "Enro Agro Limited", url: "https://enroagro.com" }],
+  authors: [{ name: "Enro Agro Limited", url: "https://flockpilot.com" }],
   robots: {
     index: true,
     follow: true,

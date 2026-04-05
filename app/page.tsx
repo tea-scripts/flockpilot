@@ -13,7 +13,7 @@ const organizationStructuredData = {
   "@type": "Organization",
   name: "Enro Agro Limited",
   url: "https://flockpilot.com",
-  email: "info@enroagro.com",
+  email: "info@flockpilot.com",
   telephone: "+2348162420463",
   address: {
     "@type": "PostalAddress",

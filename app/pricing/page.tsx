@@ -89,7 +89,7 @@ const tiers = [
     users: "Unlimited",
     bestFor: "Large operators, integrators, and farm groups",
     cta: "Contact Sales",
-    ctaHref: "mailto:info@enroagro.com?subject=FlockPilot Enterprise Inquiry",
+    ctaHref: "mailto:info@flockpilot.com?subject=FlockPilot Enterprise Inquiry",
     features: [
       "Everything in Scale, plus:",
       "Unlimited AI messages",

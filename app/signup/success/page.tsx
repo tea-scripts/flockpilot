@@ -54,8 +54,8 @@ export default function SignupSuccessPage() {
 
           <p className="mt-6 text-xs text-white/40">
             Didn&apos;t receive an email? Check your spam folder or contact{" "}
-            <a href="mailto:info@enroagro.com" className="text-brand-light hover:underline">
-              info@enroagro.com
+            <a href="mailto:info@flockpilot.com" className="text-brand-light hover:underline">
+              info@flockpilot.com
             </a>
           </p>
 

@@ -138,7 +138,7 @@ export async function requestDemoAction(
   if (!apiKey) {
     return {
       ok: false,
-      message: "Demo requests are temporarily unavailable. Please email info@enroagro.com."
+      message: "Demo requests are temporarily unavailable. Please email info@flockpilot.com."
     };
   }
 
@@ -149,7 +149,7 @@ export async function requestDemoAction(
   try {
     const { data, error } = await resend.emails.send({
       from,
-      to: ["info@enroagro.com"],
+      to: ["info@flockpilot.com"],
       replyTo: parsed.data.email,
       subject: `FlockPilot Demo Request - ${parsed.data.companyName}`,
       html,

@@ -144,6 +144,6 @@ FlockPilot differs from generic farm management or accounting software in severa
 - **Location**: Lagos, Nigeria
 - **Industry**: Agricultural Technology (AgTech)
 - **Website**: https://flockpilot.com
-- **Email**: info@enroagro.com
+- **Email**: info@flockpilot.com
 - **Phone**: +234 816 242 0463
 - **Social**: X (@enroagro), Instagram (@enroagro)

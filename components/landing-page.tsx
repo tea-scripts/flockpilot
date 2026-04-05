@@ -271,7 +271,7 @@ const pricingTiers: PricingTier[] = [
       "Onsite onboarding available"
     ],
     cta: "Contact Sales",
-    ctaHref: "mailto:info@enroagro.com?subject=FlockPilot Enterprise Inquiry",
+    ctaHref: "mailto:info@flockpilot.com?subject=FlockPilot Enterprise Inquiry",
     bestFor: "50,000+ birds, multiple companies/tenants, compliance-heavy operations."
   }
 ];
@@ -934,8 +934,8 @@ export function LandingPage() {
             <p className="mt-4 text-sm text-white/85">FlockPilot is a product of Enro Agro Limited.</p>
             <p className="mt-4 text-sm text-white/80">Lagos, Nigeria</p>
             <p className="mt-2 text-sm">
-              <a href="mailto:info@enroagro.com" className="text-white/90 hover:text-brand-yellow">
-                info@enroagro.com
+              <a href="mailto:info@flockpilot.com" className="text-white/90 hover:text-brand-yellow">
+                info@flockpilot.com
               </a>
             </p>
             <p className="mt-1 text-sm">

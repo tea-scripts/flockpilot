@@ -91,8 +91,8 @@ export default function AboutPage() {
               <ul className="space-y-2 text-sm text-white/70">
                 <li>
                   <span className="text-white/40">Email:</span>{" "}
-                  <a href="mailto:info@enroagro.com" className="text-brand-light hover:underline">
-                    info@enroagro.com
+                  <a href="mailto:info@flockpilot.com" className="text-brand-light hover:underline">
+                    info@flockpilot.com
                   </a>
                 </li>
                 <li>
