@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import { Facebook, Instagram, X, ChevronDown } from "lucide-react";
 import { requestDemoAction, type DemoFormState } from "@/app/actions";
 import { trackLandingEvent } from "@/lib/analytics";
@@ -914,9 +915,11 @@ export function LandingPage() {
             Trusted by farms across Nigeria
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-10">
-            <img
+            <Image
               src="/enro-logo.png"
               alt="Enro Agro Limited"
+              width={120}
+              height={64}
               className="h-16 w-auto opacity-90"
             />
           </div>

@@ -110,7 +110,7 @@ export default function OgImage() {
         >
           {[
             { value: "30+", label: "Modules" },
-            { value: "₦25K", label: "From/month" },
+            { value: "N25K", label: "From/month" },
             { value: "99.9%", label: "Uptime" },
             { value: "AI", label: "Built-in" },
           ].map((stat) => (

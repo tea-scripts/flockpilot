@@ -55,10 +55,6 @@ function PlanDropdown({
     return `${label} — ${price}`;
   }
 
-  function formatBillingTag(plan: Plan) {
-    return plan.interval === "ANNUALLY" ? "Annual (save 15%)" : "Monthly";
-  }
-
   return (
     <div ref={ref} className="relative">
       <input type="hidden" name="planCode" value={selected?.code || ""} />
