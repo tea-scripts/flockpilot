@@ -14,7 +14,7 @@ const organizationStructuredData = {
   name: "Enro Agro Limited",
   url: "https://flockpilot.com",
   email: "info@flockpilot.com",
-  telephone: "+2348162420463",
+  telephone: "+2349134632589",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lagos",

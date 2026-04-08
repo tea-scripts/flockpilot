@@ -882,7 +882,7 @@ export function LandingPage() {
               <span className="text-xs text-white/40">or</span>
             </div>
             <a
-              href="https://wa.me/2348162420463"
+              href="https://wa.me/2349134632589"
               target="_blank"
               rel="noopener noreferrer"
               className="sm:col-span-2 flex items-center justify-center gap-2 rounded-xl border border-[#25D366]/40 bg-[#25D366]/10 px-4 py-2.5 text-sm font-semibold text-[#25D366] transition hover:bg-[#25D366]/20"
@@ -942,13 +942,13 @@ export function LandingPage() {
               </a>
             </p>
             <p className="mt-1 text-sm">
-              <a href="tel:+2348162420463" className="text-white/90 hover:text-brand-yellow">
-                +2348162420463
+              <a href="tel:+2349134632589" className="text-white/90 hover:text-brand-yellow">
+                +2349134632589
               </a>
             </p>
             <p className="mt-2 text-sm">
               <a
-                href="https://wa.me/2348162420463"
+                href="https://wa.me/2349134632589"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/90 hover:text-brand-yellow"

@@ -97,8 +97,8 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <span className="text-white/40">Phone:</span>{" "}
-                  <a href="tel:+2348162420463" className="text-brand-light hover:underline">
-                    +234 816 242 0463
+                  <a href="tel:+2349134632589" className="text-brand-light hover:underline">
+                    +234 913 463 2589
                   </a>
                 </li>
                 <li>
