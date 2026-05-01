@@ -1,5 +1,115 @@
 [
   {
+    "version": "0.5.0",
+    "date": "2026-05-02",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Invoicing: create branded PDF invoices with line items, VAT (default 7.5%) and Withholding tax. Each invoice carries a verification reference customers can check at /verify"
+      },
+      {
+        "type": "added",
+        "text": "Invoicing: send approved invoices to customers over WhatsApp directly from the invoice drawer"
+      },
+      {
+        "type": "added",
+        "text": "Invoicing: create an invoice draft from an approved Farm Sale in one click"
+      },
+      {
+        "type": "added",
+        "text": "Tenant logo upload under Settings → Branding now appears on invoice PDFs"
+      },
+      {
+        "type": "added",
+        "text": "Treasury account cards on Funding Events with per-bank reconciliation status, balance sparkline, and a statement drawer for linking outflows"
+      },
+      {
+        "type": "added",
+        "text": "Sessions & Security page at /profile/sessions to see and sign out active devices, with location and last-seen"
+      },
+      {
+        "type": "added",
+        "text": "Audit log entries now show before / after change details and the originating request body"
+      },
+      {
+        "type": "added",
+        "text": "Public verification page at /verify so a recipient can confirm an invoice was issued by your tenant"
+      },
+      {
+        "type": "improved",
+        "text": "Vendors & Customers form now properly records the type (Vendor, Customer, or Both) and renders colour-coded badges in the table"
+      },
+      {
+        "type": "improved",
+        "text": "Vendors can now be removed from the list (deactivates them so existing records stay intact)"
+      },
+      {
+        "type": "improved",
+        "text": "Phone numbers now use a split-segment input with the country code as a non-editable prefix and digit-only enforcement so users can't submit malformed numbers"
+      },
+      {
+        "type": "improved",
+        "text": "AR invoice form clearly marks Bank account as required, with a short caption and a Submit button that is disabled until the invoice is valid"
+      },
+      {
+        "type": "improved",
+        "text": "AR invoices include a slide-in detail drawer showing line items, payment account, and tax summary alongside the existing actions"
+      },
+      {
+        "type": "fixed",
+        "text": "Public verification page no longer redirects to /login or shows a \"Checking session\" overlay"
+      },
+      {
+        "type": "fixed",
+        "text": "Removing a vendor now reflects in the UI immediately"
+      },
+      {
+        "type": "fixed",
+        "text": "Vendors & Customers list no longer serves stale data after a create, edit, or remove"
+      },
+      {
+        "type": "fixed",
+        "text": "AR invoice PDF: Unit Price no longer overlaps the Amount column and the Amount column now has visible right padding"
+      },
+      {
+        "type": "fixed",
+        "text": "Duplicate vendor or customer codes return a clear conflict message instead of a 500"
+      },
+      {
+        "type": "fixed",
+        "text": "Sale-event → invoice shortcut: the Create Invoice action now appears on posted sales (it was checking the wrong status)"
+      },
+      {
+        "type": "fixed",
+        "text": "Invoice submission errors now read in plain English (\"Bank account is required before submission\") instead of internal field names"
+      },
+      {
+        "type": "security",
+        "text": "New-login email notifications include device, IP, and approximate location"
+      },
+      {
+        "type": "security",
+        "text": "Role-based access now denies by default when a route has no role metadata"
+      },
+      {
+        "type": "security",
+        "text": "Public endpoints (like the invoice verification check) are no longer rejected by the role guard"
+      },
+      {
+        "type": "security",
+        "text": "OTP codes are no longer logged outside development environments"
+      },
+      {
+        "type": "security",
+        "text": "Temporary passwords issued on user creation are now unique per user"
+      },
+      {
+        "type": "security",
+        "text": "Full audit log access is restricted to Super Admin"
+      }
+    ]
+  },
+  {
     "version": "0.4.0",
     "date": "2026-04-03",
     "entries": [
