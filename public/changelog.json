@@ -1,33 +1,41 @@
 [
   {
+    "version": "0.5.0",
+    "date": "2026-05-02",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Invoicing — send branded PDF invoices to customers over WhatsApp, with VAT and Withholding Tax built in. Create one straight from an approved farm sale, and customers can confirm the invoice is genuine before they pay"
+      },
+      {
+        "type": "added",
+        "text": "Treasury — new bank account cards on Funding Events show each account's balance, what's already been reconciled, and let you link payments straight from a bank statement"
+      },
+      {
+        "type": "added",
+        "text": "Sessions & Security — if you lose a phone or share a computer, you can now see every device signed in to your account and sign any of them out from your profile"
+      },
+      {
+        "type": "improved",
+        "text": "You can now record a contact as a vendor, a customer, or both — and remove vendors you no longer work with"
+      },
+      {
+        "type": "fixed",
+        "text": "Customers can now open the invoice verification link without being asked to log in"
+      },
+      {
+        "type": "security",
+        "text": "Login alert emails now show the device, network, and approximate location so you can spot anyone signing in to your account that shouldn't be"
+      }
+    ]
+  },
+  {
     "version": "0.4.0",
     "date": "2026-04-03",
     "entries": [
       {
         "type": "fixed",
-        "text": "Cash flow statement no longer errors on unclassified items"
-      },
-      {
-        "type": "fixed",
-        "text": "Staging and platform subdomains now correctly reserved"
-      }
-    ]
-  },
-  {
-    "version": "0.3.0",
-    "date": "2026-04-01",
-    "entries": [
-      {
-        "type": "improved",
-        "text": "Updated error monitoring for better issue tracking"
-      },
-      {
-        "type": "fixed",
-        "text": "API now correctly restricts access to FlockPilot domains only"
-      },
-      {
-        "type": "fixed",
-        "text": "Database connection failures no longer crash audit logging"
+        "text": "Cash flow statement now generates correctly even when items are unclassified"
       }
     ]
   },
@@ -37,15 +45,11 @@
     "entries": [
       {
         "type": "fixed",
-        "text": "Critical security update applied to Next.js framework"
-      },
-      {
-        "type": "fixed",
         "text": "Chat dropdown menus now readable in light mode"
       },
       {
         "type": "fixed",
-        "text": "Self-service pages (profile, payslips, notifications) now accessible to all roles"
+        "text": "Profile, payslips, and notifications pages are now accessible to all team members"
       }
     ]
   },
@@ -59,19 +63,7 @@
       },
       {
         "type": "improved",
-        "text": "Tenant control page now has summary cards, filters, and chips"
-      },
-      {
-        "type": "improved",
-        "text": "Admin user fields added to Create Tenant form"
-      },
-      {
-        "type": "improved",
         "text": "Trial duration extended from 7 to 14 days"
-      },
-      {
-        "type": "fixed",
-        "text": "Trial provisioning no longer crashes when admin user is missing"
       }
     ]
   }
