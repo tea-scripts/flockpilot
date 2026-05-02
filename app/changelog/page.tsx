@@ -116,9 +116,9 @@ export default function ChangelogPage() {
                 {release.entries.map((entry, i) => {
                   const { cls, label } = getBadge(entry.type);
                   return (
-                    <div key={i} className="flex items-start gap-3">
+                    <div key={i} className="flex flex-col items-start gap-2">
                       <span
-                        className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${cls}`}
+                        className={`rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${cls}`}
                       >
                         {label}
                       </span>
