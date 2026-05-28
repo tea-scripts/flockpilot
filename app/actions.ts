@@ -64,7 +64,7 @@ function buildDemoRequestEmail(payload: DemoRequestPayload): { html: string; tex
     .map(
       ([label, value]) => `
         <tr>
-          <td style="padding: 10px 12px; border-bottom: 1px solid #e6eadf; width: 220px; font-weight: 600; color: #2a332c;">${escapeHtml(label)}</td>
+          <td style="padding: 10px 12px; border-bottom: 1px solid #e6eadf; width: 220px; font-weight: 600; color: #0E2D1D;">${escapeHtml(label)}</td>
           <td style="padding: 10px 12px; border-bottom: 1px solid #e6eadf; color: #111827;">${escapeHtml(value)}</td>
         </tr>
       `
@@ -72,11 +72,11 @@ function buildDemoRequestEmail(payload: DemoRequestPayload): { html: string; tex
     .join("");
 
   const html = `
-    <div style="margin:0; padding:24px; background:#0f1712; font-family:Arial, Helvetica, sans-serif;">
-      <table role="presentation" cellspacing="0" cellpadding="0" width="100%" style="max-width:760px; margin:0 auto; border:1px solid #2f4a1d; border-radius:14px; overflow:hidden; background:#f7f9f4;">
+    <div style="margin:0; padding:24px; background:#0E2D1D; font-family:Arial, Helvetica, sans-serif;">
+      <table role="presentation" cellspacing="0" cellpadding="0" width="100%" style="max-width:760px; margin:0 auto; border:1px solid #14402A; border-radius:14px; overflow:hidden; background:#f7f9f4;">
         <tr>
-          <td style="padding:20px 24px; background:linear-gradient(90deg, #1d2a21 0%, #223329 100%); color:#ffffff;">
-            <div style="font-size:26px; font-weight:800; letter-spacing:0.02em; color:#f0e000;">FlockPilot</div>
+          <td style="padding:20px 24px; background:linear-gradient(90deg, #0E2D1D 0%, #14402A 100%); color:#ffffff;">
+            <div style="font-size:26px; font-weight:800; letter-spacing:0.02em; color:#F1CB12;">FlockPilot</div>
             <div style="margin-top:6px; font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:#d6dfcd;">New Demo Request</div>
           </td>
         </tr>
@@ -93,7 +93,7 @@ function buildDemoRequestEmail(payload: DemoRequestPayload): { html: string; tex
           </td>
         </tr>
         <tr>
-          <td style="padding:0 24px 8px; color:#2a332c; font-size:13px; text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">Message</td>
+          <td style="padding:0 24px 8px; color:#0E2D1D; font-size:13px; text-transform:uppercase; letter-spacing:0.08em; font-weight:700;">Message</td>
         </tr>
         <tr>
           <td style="padding:0 24px 24px;">

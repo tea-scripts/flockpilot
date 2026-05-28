@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --brand-deep-green: #0f1712;
-  --brand-light-green: #88bd3a;
-  --brand-yellow: #f0e000;
-  --brand-canvas: #1d2a21;
+  --brand-deep-green: #0E2D1D;
+  --brand-light-green: #32A365;
+  --brand-yellow: #F1CB12;
+  --brand-canvas: #14402A;
 }
 
 * {
@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: #ffffff;
   background: var(--brand-deep-green);
 }
@@ -42,11 +42,11 @@ body {
   border-radius: inherit;
   background: conic-gradient(
     from 0deg,
-    rgba(137, 191, 28, 0.2),
-    rgba(240, 224, 0, 0.95),
-    rgba(137, 191, 28, 0.25),
-    rgba(240, 224, 0, 0.9),
-    rgba(137, 191, 28, 0.2)
+    rgba(50, 163, 101, 0.2),
+    rgba(241, 203, 18, 0.95),
+    rgba(50, 163, 101, 0.25),
+    rgba(241, 203, 18, 0.9),
+    rgba(50, 163, 101, 0.2)
   );
   animation: shiny-circuit 3.2s linear infinite;
   z-index: -2;

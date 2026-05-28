@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt =
-  "FlockPilot — The operating system for profitable poultry farms";
+export const alt = "FlockPilot — Run every farm. Know every number.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -11,7 +10,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0A1F12 0%, #122A1A 50%, #0A1F12 100%)",
+          background: "linear-gradient(135deg, #0E2D1D 0%, #14402A 50%, #0E2D1D 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -30,7 +29,7 @@ export default function OgImage() {
             left: 0,
             right: 0,
             height: "4px",
-            background: "linear-gradient(90deg, #22C55E, #86EFAC, #22C55E)",
+            background: "linear-gradient(90deg, #32A365, #F1CB12, #32A365)",
           }}
         />
 
@@ -48,7 +47,7 @@ export default function OgImage() {
               width: "56px",
               height: "56px",
               borderRadius: "14px",
-              background: "linear-gradient(135deg, #22C55E, #16A34A)",
+              background: "linear-gradient(135deg, #32A365, #0E2D1D)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -63,7 +62,7 @@ export default function OgImage() {
             style={{
               fontSize: "36px",
               fontWeight: 700,
-              color: "#22C55E",
+              color: "#32A365",
               letterSpacing: "-0.02em",
             }}
           >
@@ -84,14 +83,14 @@ export default function OgImage() {
             maxWidth: "900px",
           }}
         >
-          The operating system for profitable poultry farms
+          Run every farm. Know every number.
         </div>
 
         {/* Subtitle */}
         <div
           style={{
             fontSize: "22px",
-            color: "#86EFAC",
+            color: "#8FD9B4",
             textAlign: "center",
             lineHeight: 1.5,
             maxWidth: "700px",
@@ -135,7 +134,7 @@ export default function OgImage() {
               <span
                 style={{
                   fontSize: "14px",
-                  color: "#6EE7A0",
+                  color: "#8FD9B4",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                 }}
@@ -154,13 +153,13 @@ export default function OgImage() {
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            color: "#4ADE80",
+            color: "#8FD9B4",
             fontSize: "16px",
           }}
         >
           <span style={{ fontWeight: 600 }}>flockpilot.com</span>
-          <span style={{ color: "#22C55E40" }}>|</span>
-          <span style={{ color: "#86EFAC" }}>by Enro Agro Limited</span>
+          <span style={{ color: "#32A36540" }}>|</span>
+          <span style={{ color: "#8FD9B4" }}>Poultry · Piggery · Aquaculture</span>
         </div>
       </div>
     ),

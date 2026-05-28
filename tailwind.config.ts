@@ -6,11 +6,18 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
+          green: "#32A365",
+          "green-dark": "#0E2D1D",
+          yellow: "#F1CB12",
+          white: "#F5F5F5",
+          black: "#000000",
           deep: "var(--brand-deep-green)",
           light: "var(--brand-light-green)",
-          yellow: "var(--brand-yellow)",
           canvas: "var(--brand-canvas)"
         }
+      },
+      fontFamily: {
+        sans: ["DM Sans", "sans-serif"]
       },
       boxShadow: {
         panel: "0 20px 60px rgba(17, 59, 3, 0.15)",

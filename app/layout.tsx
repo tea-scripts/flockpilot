@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { CookieConsent } from "@/components/cookie-consent";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-plus-jakarta"
+  weight: ["400", "500", "600", "700"],
+  display: "swap"
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flockpilot.com"),
   title: {
-    default: "FlockPilot | Poultry Farm Management Software Nigeria — ERP by Enro Agro",
+    default: "FlockPilot — Run every farm. Know every number.",
     template: "%s | FlockPilot"
   },
   applicationName: "FlockPilot",
   description:
-    "FlockPilot (also searched as Flock Pilot) is the #1 poultry farm management software in Nigeria. All-in-one ERP for farm operations, feed tracking, mortality analysis, flock financials, payroll, AI assistant, and unit economics. Built by Enro Agro Limited for poultry farmers across Africa.",
+    "Farm management and ERP platform for poultry, piggery, and aquaculture operations across Africa.",
   keywords: [
     "flockpilot",
     "flock pilot",
@@ -48,6 +48,14 @@ export const metadata: Metadata = {
   creator: "Enro Agro Limited",
   publisher: "Enro Agro Limited",
   authors: [{ name: "Enro Agro Limited", url: "https://flockpilot.com" }],
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" }
+    ],
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico"
+  },
   robots: {
     index: true,
     follow: true,
@@ -60,9 +68,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "FlockPilot — Poultry Farm Management Software for Nigeria & Africa",
+    title: "FlockPilot — Run every farm. Know every number.",
     description:
-      "All-in-one poultry ERP: farm ops, feed tracking, financials, payroll, and AI assistant. From ₦25,000/month. Built for Nigerian poultry farmers by Enro Agro.",
+      "Farm management and ERP platform for poultry, piggery, and aquaculture operations across Africa.",
     type: "website",
     locale: "en_NG",
     url: "https://flockpilot.com",
@@ -81,9 +89,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@enroagro",
     creator: "@enroagro",
-    title: "FlockPilot — Poultry Farm Management Software",
-    description:
-      "All-in-one poultry ERP: farm ops, feed tracking, financials, payroll, and AI assistant. Built for Nigerian poultry farmers.",
+    title: "FlockPilot",
+    description: "Run every farm. Know every number.",
     images: ["/twitter-image"]
   },
   alternates: {
@@ -109,7 +116,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>
+      <body className={`${dmSans.className} font-sans antialiased`}>
         <GoogleAnalytics />
         {children}
         <CookieConsent />

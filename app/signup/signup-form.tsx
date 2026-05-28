@@ -79,7 +79,7 @@ function PlanDropdown({
       </button>
 
       {open && (
-        <div className="absolute z-50 mt-1 w-full overflow-hidden rounded-xl border border-white/15 bg-[#1a2e1f] shadow-xl">
+        <div className="absolute z-50 mt-1 w-full overflow-hidden rounded-xl border border-white/15 bg-[#14402A] shadow-xl">
           {monthlyPlans.length > 0 && (
             <div>
               <div className="px-4 py-2 text-[10px] font-semibold uppercase tracking-wider text-white/40">
