@@ -590,7 +590,7 @@ export function LandingPage() {
                       key={label}
                       whileHover={{ y: -3, scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                      className="rounded-2xl border border-white/12 bg-[#14402A] p-4"
+                      className="rounded-2xl border border-white/12 bg-[rgba(50,163,101,0.08)] p-4"
                     >
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
                         {label}
@@ -733,8 +733,8 @@ export function LandingPage() {
                         key={feature}
                         className={`rounded-lg border px-3 py-2 break-words [overflow-wrap:anywhere] ${
                           tier.featured
-                            ? "border-white/15 bg-[#1C5238]"
-                            : "border-white/10 bg-[#14402A]"
+                            ? "border-white/15 bg-[rgba(50,163,101,0.18)]"
+                            : "border-white/10 bg-[rgba(50,163,101,0.08)]"
                         }`}
                       >
                         {feature}
@@ -776,7 +776,7 @@ export function LandingPage() {
             {faqItems.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
-                <div key={faq.question} className="rounded-xl border border-white/15 bg-[#14402A]">
+                <div key={faq.question} className="rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)]">
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : index)}
@@ -816,7 +816,7 @@ export function LandingPage() {
               <input
                 name="fullName"
                 type="text"
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
               />
               <FieldError error={state.errors?.fullName} />
             </label>
@@ -825,7 +825,7 @@ export function LandingPage() {
               <input
                 name="companyName"
                 type="text"
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
               />
               <FieldError error={state.errors?.companyName} />
             </label>
@@ -834,7 +834,7 @@ export function LandingPage() {
               <input
                 name="email"
                 type="email"
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
               />
               <FieldError error={state.errors?.email} />
             </label>
@@ -843,7 +843,7 @@ export function LandingPage() {
               <input
                 name="phoneNumber"
                 type="tel"
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
               />
               <FieldError error={state.errors?.phoneNumber} />
             </label>
@@ -851,7 +851,7 @@ export function LandingPage() {
               Number of Birds
               <select
                 name="numberOfBirds"
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -870,7 +870,7 @@ export function LandingPage() {
               <textarea
                 name="message"
                 rows={4}
-                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[#14402A] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
+                className="mt-1.5 w-full rounded-xl border border-white/15 bg-[rgba(50,163,101,0.08)] px-3.5 py-2.5 text-sm leading-5 text-white outline-none transition focus:border-white/40 focus:ring-2 focus:ring-white/15"
               />
               <FieldError error={state.errors?.message} />
             </label>

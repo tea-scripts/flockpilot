@@ -6,7 +6,7 @@
   --brand-deep-green: #0E2D1D;
   --brand-light-green: #32A365;
   --brand-yellow: #F1CB12;
-  --brand-canvas: #14402A;
+  --brand-canvas: rgba(50, 163, 101, 0.12);
 }
 
 * {

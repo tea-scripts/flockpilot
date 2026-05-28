@@ -20,8 +20,8 @@ const config: Config = {
         sans: ["DM Sans", "sans-serif"]
       },
       boxShadow: {
-        panel: "0 20px 60px rgba(17, 59, 3, 0.15)",
-        glow: "0 0 0 1px rgba(137, 191, 28, 0.35), 0 24px 48px rgba(17, 59, 3, 0.2)"
+        panel: "0 20px 60px rgba(14, 45, 29, 0.15)",
+        glow: "0 0 0 1px rgba(50, 163, 101, 0.35), 0 24px 48px rgba(14, 45, 29, 0.2)"
       },
       borderRadius: {
         xl2: "1.25rem"

@@ -10,7 +10,7 @@ export default function OgImage() {
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0E2D1D 0%, #14402A 50%, #0E2D1D 100%)",
+          background: "linear-gradient(135deg, #0E2D1D 0%, #000000 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -90,7 +90,7 @@ export default function OgImage() {
         <div
           style={{
             fontSize: "22px",
-            color: "#8FD9B4",
+            color: "#F5F5F5",
             textAlign: "center",
             lineHeight: 1.5,
             maxWidth: "700px",
@@ -134,7 +134,7 @@ export default function OgImage() {
               <span
                 style={{
                   fontSize: "14px",
-                  color: "#8FD9B4",
+                  color: "#F5F5F5",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                 }}
@@ -153,13 +153,13 @@ export default function OgImage() {
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            color: "#8FD9B4",
+            color: "#F5F5F5",
             fontSize: "16px",
           }}
         >
           <span style={{ fontWeight: 600 }}>flockpilot.com</span>
           <span style={{ color: "#32A36540" }}>|</span>
-          <span style={{ color: "#8FD9B4" }}>Poultry · Piggery · Aquaculture</span>
+          <span style={{ color: "#F5F5F5" }}>Poultry · Piggery · Aquaculture</span>
         </div>
       </div>
     ),
