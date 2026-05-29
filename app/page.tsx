@@ -11,19 +11,23 @@ const websiteStructuredData = {
 const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Enro Agro Limited",
+  name: "FlockPilot",
   url: "https://flockpilot.com",
   email: "info@flockpilot.com",
   telephone: "+2349134632589",
+  founder: {
+    "@type": "Person",
+    name: "Oluwatimilehin Akinnubi"
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Lagos",
     addressCountry: "NG"
   },
   sameAs: [
-    "https://x.com/enroagro",
-    "https://instagram.com/enroagro",
-    "https://facebook.com/EnroAgro"
+    "https://x.com/flockpilot",
+    "https://instagram.com/flockpilot",
+    "https://facebook.com/flockpilot"
   ]
 };
 
@@ -65,13 +69,13 @@ const productStructuredData = {
     ]
   },
   description:
-    "FlockPilot gives poultry farmers a real-time operations-and-finance cockpit that tracks flock health, feed efficiency, unit economics, and includes an AI assistant for instant farm insights.",
+    "FlockPilot gives farmers a real-time operations-and-finance cockpit — tracking flock and herd health, feed efficiency, unit economics, payroll, and accounting — with a built-in AI assistant for instant farm insights.",
   featureList:
     "Farm operations tracking, Feed consumption analytics, Mortality analysis, Flock sales management, Accounts payable, Payroll with payslips, Employee loans, Chart of accounts, Financial statements, AI-powered assistant",
   screenshot: "https://flockpilot.com/opengraph-image",
   provider: {
     "@type": "Organization",
-    name: "Enro Agro Limited"
+    name: "FlockPilot"
   }
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "How FlockPilot collects, uses, stores, and protects your personal data when you use our farm management platform and mobile application.",
   alternates: { canonical: "https://flockpilot.com/privacy-policy" },
   openGraph: {
-    title: "Privacy Policy — FlockPilot by Enro Agro Limited",
+    title: "Privacy Policy — FlockPilot",
     description:
       "How FlockPilot collects, uses, stores, and protects your personal data.",
     url: "https://flockpilot.com/privacy-policy",
@@ -173,24 +173,23 @@ export default function PrivacyPolicyPage() {
           <SectionNumber n={1} />
           <h2 className="mb-4 border-b border-white/10 pb-4 text-2xl font-bold">Who We Are</h2>
           <p className="mb-4 text-white/70">
-            FlockPilot is a multi-tenant farm management and ERP SaaS platform developed and operated by{" "}
-            <strong className="text-white">Enro Agro Limited</strong>, a company registered under the laws of the
-            Federal Republic of Nigeria (Corporate Affairs Commission). FlockPilot serves poultry farm operators,
-            managers, supervisors, and related agribusiness personnel across Nigeria and Africa.
+            FlockPilot is a multi-tenant farm management and ERP SaaS platform serving poultry farm operators,
+            managers, supervisors, and related agribusiness personnel across Nigeria and Africa. FlockPilot operates
+            in accordance with the laws of the Federal Republic of Nigeria.
           </p>
           <div className="mb-4 rounded-xl border border-white/10 bg-white/[0.03] p-5">
             <h4 className="mb-2 text-sm font-bold text-brand-light">Data Controller</h4>
             <p className="text-sm text-white/70">
-              Enro Agro Limited<br />
-              2, Creek Road, Apapa, Lagos, Nigeria<br />
+              FlockPilot<br />
+              Lagos, Nigeria<br />
               Email: <strong className="text-white">hello@flockpilot.com</strong><br />
               Website: <strong className="text-white">flockpilot.com</strong>
             </p>
           </div>
           <p className="text-white/70">
             When we refer to <strong className="text-white">&quot;FlockPilot,&quot; &quot;we,&quot; &quot;us,&quot;</strong> or{" "}
-            <strong className="text-white">&quot;our&quot;</strong> in this policy, we mean Enro Agro Limited acting as the
-            operator of the FlockPilot platform. When we say <strong className="text-white">&quot;you&quot;</strong> or{" "}
+            <strong className="text-white">&quot;our&quot;</strong> in this policy, we mean FlockPilot, the operator of the
+            platform. When we say <strong className="text-white">&quot;you&quot;</strong> or{" "}
             <strong className="text-white">&quot;your,&quot;</strong> we mean any individual accessing or using FlockPilot,
             including tenant administrators, farm managers, supervisors, operators, and any other authorized users.
           </p>
@@ -453,11 +452,11 @@ export default function PrivacyPolicyPage() {
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Operator</span>
-                <span className="text-white/70">Enro Agro Limited</span>
+                <span className="text-white/70">FlockPilot</span>
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Address</span>
-                <span className="text-white/70">2, Creek Road, Apapa, Lagos, Nigeria</span>
+                <span className="text-white/70">Lagos, Nigeria</span>
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Website</span>
@@ -479,7 +478,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-white/30">
-        &copy; 2025 Enro Agro Limited. All rights reserved. &middot; FlockPilot is a product of Enro Agro Limited, registered in Nigeria.
+        &copy; 2025 FlockPilot. All rights reserved.
       </footer>
     </main>
   );

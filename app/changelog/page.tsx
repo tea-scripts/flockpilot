@@ -137,11 +137,11 @@ export default function ChangelogPage() {
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-xs text-white/50">
         <p>
-          &copy; 2026 Enro Agro Limited. All rights reserved.{" "}
+          &copy; 2026{" "}
           <Link href="/" className="text-brand-light hover:text-brand-yellow">
             FlockPilot
-          </Link>{" "}
-          is a product of Enro Agro Limited.
+          </Link>
+          . All rights reserved.
         </p>
       </footer>
     </main>

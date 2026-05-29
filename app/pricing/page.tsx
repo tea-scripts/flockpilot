@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { Reveal, Stagger, StaggerItem, FarmMotifRow } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Pricing — Plans from ₦25,000/month",
@@ -7,9 +9,9 @@ export const metadata: Metadata = {
     "FlockPilot pricing: Starter ₦25,000/mo (2,000 birds), Growth ₦50,000/mo (10,000 birds), Scale ₦120,000/mo (50,000 birds). 15% off annual billing. AI assistant included on Growth and above.",
   alternates: { canonical: "https://flockpilot.com/pricing" },
   openGraph: {
-    title: "FlockPilot Pricing — Poultry Farm ERP from ₦25,000/month",
+    title: "FlockPilot Pricing — Farm ERP from ₦25,000/month",
     description:
-      "Transparent pricing for Nigerian poultry farmers. Starter, Growth, Scale, and Enterprise plans. 15% off annual billing.",
+      "Transparent pricing for farmers across Nigeria and Africa. Starter, Growth, Scale, and Enterprise plans. 15% off annual billing.",
     url: "https://flockpilot.com/pricing",
   },
 };
@@ -116,8 +118,8 @@ export default function PricingPage() {
       {/* Nav */}
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-brand-light">
-            FlockPilot
+          <Link href="/" aria-label="FlockPilot home" className="inline-flex">
+            <Image src="/logo-white.png" alt="FlockPilot" width={1930} height={374} className="h-7 w-auto" />
           </Link>
           <div className="flex gap-6 text-sm text-white/70">
             <Link href="/features" className="hover:text-white">Features</Link>
@@ -130,7 +132,7 @@ export default function PricingPage() {
 
       {/* Hero */}
       <section className="px-6 py-20 text-center">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
             Simple, transparent <span className="text-brand-light">pricing</span>
           </h1>
@@ -145,16 +147,17 @@ export default function PricingPage() {
               Or start with a 14-day free trial
             </Link>
           </div>
-        </div>
+          <FarmMotifRow className="mt-7 justify-center" />
+        </Reveal>
       </section>
 
       {/* Tiers */}
       <section className="px-6 pb-16">
-        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {tiers.map((tier) => (
+            <StaggerItem key={tier.name} className="h-full">
             <article
-              key={tier.name}
-              className={`flex flex-col rounded-2xl border p-6 ${
+              className={`flex h-full flex-col rounded-2xl border p-6 ${
                 tier.featured
                   ? "border-brand-light bg-brand-light/5"
                   : "border-white/10 bg-white/[0.03]"
@@ -210,8 +213,9 @@ export default function PricingPage() {
                 {tier.cta}
               </Link>
             </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {/* Add-ons */}

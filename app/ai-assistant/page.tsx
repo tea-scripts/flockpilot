@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { Reveal, Stagger, StaggerItem, FarmMotifRow } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "AI Assistant — Context-Aware Chat for Poultry Farmers",
+  title: "AI Assistant — Context-Aware Chat for Farmers",
   description:
     "FlockPilot AI is a built-in chat assistant powered by Claude that understands your farm data. Ask about feed conversion, mortality trends, financial reports, and get instant, practical answers.",
   alternates: { canonical: "https://flockpilot.com/ai-assistant" },
   openGraph: {
     title: "FlockPilot AI Assistant — Ask Your Farm a Question",
     description:
-      "Built-in AI chat that understands your poultry operation. Context-aware answers about farm ops, finance, payroll, and more.",
+      "Built-in AI chat that understands your farm operation. Context-aware answers about farm ops, finance, payroll, and more.",
     url: "https://flockpilot.com/ai-assistant",
   },
 };
@@ -78,8 +80,8 @@ export default function AiAssistantPage() {
       {/* Nav */}
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-brand-light">
-            FlockPilot
+          <Link href="/" aria-label="FlockPilot home" className="inline-flex">
+            <Image src="/logo-white.png" alt="FlockPilot" width={1930} height={374} className="h-7 w-auto" />
           </Link>
           <div className="flex gap-6 text-sm text-white/70">
             <Link href="/features" className="hover:text-white">Features</Link>
@@ -92,7 +94,7 @@ export default function AiAssistantPage() {
 
       {/* Hero */}
       <section className="px-6 py-20 text-center">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <span className="mb-4 inline-block rounded-full bg-brand-light/20 px-4 py-1.5 text-sm font-semibold text-brand-light">
             New Feature
           </span>
@@ -102,14 +104,15 @@ export default function AiAssistantPage() {
           <p className="text-lg text-white/70">
             FlockPilot AI is a built-in chat assistant powered by Claude that understands your farm context — the module you&#39;re in, the data you&#39;re looking at — and gives practical, specific advice.
           </p>
-        </div>
+          <FarmMotifRow className="mt-6 justify-center" />
+        </Reveal>
       </section>
 
       {/* How it works */}
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-10 text-center text-2xl font-bold">How it works</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <Stagger className="grid gap-6 md:grid-cols-3">
             {[
               {
                 step: "1",
@@ -130,18 +133,17 @@ export default function AiAssistantPage() {
                   "Receive a context-aware response streamed in real time, with markdown formatting for easy reading.",
               },
             ].map((s) => (
-              <div
-                key={s.step}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center"
-              >
-                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-light/20 text-lg font-bold text-brand-light">
-                  {s.step}
+              <StaggerItem key={s.step}>
+                <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center">
+                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-brand-light/20 text-lg font-bold text-brand-light">
+                    {s.step}
+                  </div>
+                  <h3 className="mb-2 font-bold">{s.title}</h3>
+                  <p className="text-sm text-white/60">{s.description}</p>
                 </div>
-                <h3 className="mb-2 font-bold">{s.title}</h3>
-                <p className="text-sm text-white/60">{s.description}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -149,24 +151,23 @@ export default function AiAssistantPage() {
       <section className="border-t border-white/10 px-6 py-16">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-10 text-center text-2xl font-bold">Example conversations</h2>
-          <div className="space-y-6">
+          <Stagger className="space-y-6">
             {examples.map((ex) => (
-              <div
-                key={ex.question}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
-              >
-                <span className="mb-2 inline-block rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/50">
-                  {ex.context}
-                </span>
-                <p className="mb-3 font-semibold text-white/90">
-                  &ldquo;{ex.question}&rdquo;
-                </p>
-                <p className="text-sm leading-relaxed text-white/60">
-                  {ex.answer}
-                </p>
-              </div>
+              <StaggerItem key={ex.question}>
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <span className="mb-2 inline-block rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/50">
+                    {ex.context}
+                  </span>
+                  <p className="mb-3 font-semibold text-white/90">
+                    &ldquo;{ex.question}&rdquo;
+                  </p>
+                  <p className="text-sm leading-relaxed text-white/60">
+                    {ex.answer}
+                  </p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -207,16 +208,18 @@ export default function AiAssistantPage() {
 
       {/* CTA */}
       <section className="border-t border-white/10 px-6 py-16 text-center">
-        <h2 className="mb-4 text-2xl font-bold">Try FlockPilot AI</h2>
-        <p className="mb-6 text-white/60">
-          Available on Growth plans and above. Start with a demo to see it in action.
-        </p>
-        <Link
-          href="/#demo"
-          className="inline-block rounded-xl bg-brand-light px-8 py-3 font-semibold text-brand-deep transition hover:opacity-90"
-        >
-          Request a Demo
-        </Link>
+        <Reveal>
+          <h2 className="mb-4 text-2xl font-bold">Try FlockPilot AI</h2>
+          <p className="mb-6 text-white/60">
+            Available on Growth plans and above. Start with a demo to see it in action.
+          </p>
+          <Link
+            href="/#demo"
+            className="inline-block rounded-xl bg-brand-light px-8 py-3 font-semibold text-brand-deep transition hover:opacity-90"
+          >
+            Request a Demo
+          </Link>
+        </Reveal>
       </section>
     </main>
   );

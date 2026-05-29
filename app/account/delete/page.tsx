@@ -41,9 +41,8 @@ export default function DeleteAccountPage() {
             Delete Your <span className="text-red-400">Account</span>
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-white/60">
-            FlockPilot is developed by <strong className="text-white">Enro Agro Limited</strong>. If you no longer wish
-            to use FlockPilot, you can request the permanent deletion of your account and associated data by following
-            the steps below.
+            If you no longer wish to use FlockPilot, you can request the permanent deletion of your account and
+            associated data by following the steps below.
           </p>
         </div>
       </section>
@@ -191,11 +190,11 @@ export default function DeleteAccountPage() {
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Operator</span>
-                <span className="text-white/70">Enro Agro Limited</span>
+                <span className="text-white/70">FlockPilot</span>
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Address</span>
-                <span className="text-white/70">2, Creek Road, Apapa, Lagos, Nigeria</span>
+                <span className="text-white/70">Lagos, Nigeria</span>
               </div>
             </div>
           </div>
@@ -209,7 +208,7 @@ export default function DeleteAccountPage() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-white/30">
-        &copy; 2025 Enro Agro Limited. All rights reserved. &middot; FlockPilot is a product of Enro Agro Limited, registered in Nigeria.
+        &copy; 2025 FlockPilot. All rights reserved.
       </footer>
     </main>
   );

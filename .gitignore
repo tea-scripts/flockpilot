@@ -11,3 +11,9 @@ test-results
 
 # typescript incremental build cache
 *.tsbuildinfo
+
+# Brainstorm visual companion
+.superpowers/
+
+# Playwright MCP screenshot output
+.playwright-mcp/

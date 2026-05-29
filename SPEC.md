@@ -1,6 +1,6 @@
 # FlockPilot — Feature Specification v1
 
-**Product:** FlockPilot by Enro Agro Limited
+**Product:** FlockPilot
 **Category:** Agribusiness ERP & Farm Intelligence Platform
 **Focus:** Poultry farm owners and agribusiness operators in Nigeria, expanding across Africa
 **Version:** v1
@@ -254,4 +254,4 @@
 
 ---
 
-_FlockPilot is a product of Enro Agro Limited. Lagos, Nigeria._
+_FlockPilot is built by Oluwatimilehin Akinnubi. Lagos, Nigeria._

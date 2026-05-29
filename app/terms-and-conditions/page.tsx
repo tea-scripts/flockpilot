@@ -4,10 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms and Conditions — FlockPilot",
   description:
-    "Terms and Conditions for using FlockPilot, the poultry farm management and ERP platform operated by Enro Agro Limited.",
+    "Terms and Conditions for using FlockPilot, the poultry farm management and ERP platform.",
   alternates: { canonical: "https://flockpilot.com/terms-and-conditions" },
   openGraph: {
-    title: "Terms and Conditions — FlockPilot by Enro Agro Limited",
+    title: "Terms and Conditions — FlockPilot",
     description:
       "Terms and Conditions governing the use of the FlockPilot platform.",
     url: "https://flockpilot.com/terms-and-conditions",
@@ -120,7 +120,7 @@ export default function TermsAndConditionsPage() {
           </h1>
           <p className="max-w-xl text-base leading-relaxed text-white/60">
             These Terms and Conditions constitute a legally binding agreement between you and{" "}
-            <strong className="text-white">Enro Agro Limited</strong>, the operator of the FlockPilot farm management
+            <strong className="text-white">FlockPilot</strong>, the operator of the farm management
             and ERP platform.
           </p>
           <div className="mt-8 flex flex-wrap gap-8 text-sm">
@@ -411,7 +411,7 @@ export default function TermsAndConditionsPage() {
           <h3 className="mb-2 mt-6 text-lg font-semibold">8.1 Our Intellectual Property</h3>
           <p className="mb-4 text-white/70">
             FlockPilot, including its software, design, architecture, features, documentation, trademarks, and all
-            content we create, is the exclusive intellectual property of Enro Agro Limited. These Terms do not transfer
+            content we create, is the exclusive intellectual property of FlockPilot. These Terms do not transfer
             any ownership rights to you. You are granted a limited, non-exclusive, non-transferable, revocable licence
             to access and use the Platform solely in accordance with these Terms.
           </p>
@@ -543,7 +543,7 @@ export default function TermsAndConditionsPage() {
           <SectionNumber n={13} />
           <h2 className="mb-4 border-b border-white/10 pb-4 text-2xl font-bold">Limitation of Liability</h2>
           <p className="mb-4 text-white/70">
-            To the maximum extent permitted by Nigerian law, Enro Agro Limited and its officers, directors, employees,
+            To the maximum extent permitted by Nigerian law, FlockPilot and its officers, directors, employees,
             and agents shall not be liable for any:
           </p>
           <ul className="mb-4 space-y-2 text-white/70">
@@ -570,7 +570,7 @@ export default function TermsAndConditionsPage() {
           <SectionNumber n={14} />
           <h2 className="mb-4 border-b border-white/10 pb-4 text-2xl font-bold">Indemnification</h2>
           <p className="mb-4 text-white/70">
-            You agree to indemnify, defend, and hold harmless Enro Agro Limited and its officers, directors, employees,
+            You agree to indemnify, defend, and hold harmless FlockPilot and its officers, directors, employees,
             and agents from and against any claims, liabilities, damages, losses, and expenses (including reasonable
             legal fees) arising out of or related to:
           </p>
@@ -677,7 +677,7 @@ export default function TermsAndConditionsPage() {
             For any questions, concerns, or notices regarding these Terms, please contact us:
           </p>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-            <h4 className="mb-4 text-lg font-bold">Enro Agro Limited (FlockPilot)</h4>
+            <h4 className="mb-4 text-lg font-bold">FlockPilot</h4>
             <div className="divide-y divide-white/5 text-sm">
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Email</span>
@@ -685,7 +685,7 @@ export default function TermsAndConditionsPage() {
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Address</span>
-                <span className="text-white/70">2, Creek Road, Apapa, Lagos, Nigeria</span>
+                <span className="text-white/70">Lagos, Nigeria</span>
               </div>
               <div className="flex gap-4 py-3">
                 <span className="w-24 shrink-0 text-xs font-semibold uppercase tracking-wider text-white/40">Website</span>
@@ -703,8 +703,7 @@ export default function TermsAndConditionsPage() {
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-white/30">
-        &copy; 2025 Enro Agro Limited. All rights reserved. &middot; FlockPilot is a product of Enro Agro Limited,
-        registered in Nigeria under the Corporate Affairs Commission (CAC). These Terms were last updated on 1 April 2025.
+        &copy; 2025 FlockPilot. All rights reserved. &middot; These Terms were last updated on 1 April 2025.
       </footer>
     </main>
   );

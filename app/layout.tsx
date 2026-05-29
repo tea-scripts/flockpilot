@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   applicationName: "FlockPilot",
   description:
-    "Farm management and ERP platform for poultry, piggery, and aquaculture operations across Africa.",
+    "Farm management and ERP for livestock and crop farms across Africa — operations, finance, payroll, and AI in one platform.",
   keywords: [
     "flockpilot",
     "flock pilot",
@@ -40,14 +40,19 @@ export const metadata: Metadata = {
     "broiler farm software",
     "layer farm software",
     "agricultural ERP Africa",
-    "FlockPilot",
-    "Enro Agro Limited",
-    "Enro Agro"
+    "farm management software",
+    "farm management software Africa",
+    "livestock management software",
+    "crop farm management software",
+    "agribusiness ERP",
+    "farm finance software",
+    "farm payroll software Africa",
+    "FlockPilot"
   ],
   category: "Agriculture Technology",
-  creator: "Enro Agro Limited",
-  publisher: "Enro Agro Limited",
-  authors: [{ name: "Enro Agro Limited", url: "https://flockpilot.com" }],
+  creator: "Oluwatimilehin Akinnubi",
+  publisher: "FlockPilot",
+  authors: [{ name: "Oluwatimilehin Akinnubi", url: "https://flockpilot.com" }],
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -70,7 +75,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FlockPilot — Run every farm. Know every number.",
     description:
-      "Farm management and ERP platform for poultry, piggery, and aquaculture operations across Africa.",
+      "Farm management and ERP for livestock and crop farms across Africa — operations, finance, payroll, and AI in one platform.",
     type: "website",
     locale: "en_NG",
     url: "https://flockpilot.com",
@@ -87,8 +92,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@enroagro",
-    creator: "@enroagro",
+    site: "@flockpilot",
+    creator: "@flockpilot",
     title: "FlockPilot",
     description: "Run every farm. Know every number.",
     images: ["/twitter-image"]

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { Reveal, Stagger, StaggerItem, FarmMotifRow } from "@/components/motion";
 
 export const metadata: Metadata = {
-  title: "Features — 30+ Poultry Farm Management Modules",
+  title: "Features — 30+ Farm Management Modules",
   description:
-    "FlockPilot includes farm operations, feed tracking, mortality analysis, double-entry accounting, payroll, employee loans, AI assistant, and 30+ more modules built for poultry farmers in Nigeria.",
+    "FlockPilot includes farm operations, feed tracking, mortality analysis, double-entry accounting, payroll, employee loans, AI assistant, and 30+ more modules built for farms across Nigeria and Africa.",
   alternates: { canonical: "https://flockpilot.com/features" },
   openGraph: {
-    title: "FlockPilot Features — 30+ Poultry Farm Management Modules",
+    title: "FlockPilot Features — 30+ Farm Management Modules",
     description:
-      "Farm ops, feed tracking, financials, payroll, HR, loans, AI assistant — everything a poultry farm needs in one platform.",
+      "Farm ops, feed tracking, financials, payroll, HR, loans, AI assistant — everything a farm needs in one platform.",
     url: "https://flockpilot.com/features",
   },
 };
@@ -140,8 +142,8 @@ export default function FeaturesPage() {
       {/* Nav */}
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-brand-light">
-            FlockPilot
+          <Link href="/" aria-label="FlockPilot home" className="inline-flex">
+            <Image src="/logo-white.png" alt="FlockPilot" width={1930} height={374} className="h-7 w-auto" />
           </Link>
           <div className="flex gap-6 text-sm text-white/70">
             <Link href="/features" className="text-brand-light">Features</Link>
@@ -154,52 +156,54 @@ export default function FeaturesPage() {
 
       {/* Hero */}
       <section className="px-6 py-20 text-center">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-            30+ modules built for <span className="text-brand-light">poultry farms</span>
+            30+ modules built for <span className="text-brand-light">modern farms</span>
           </h1>
           <p className="text-lg text-white/70">
-            From flock batch tracking to double-entry accounting, payroll to AI-powered insights — FlockPilot replaces your spreadsheets, WhatsApp groups, and disconnected tools with one integrated platform.
+            From flock and herd tracking to double-entry accounting, payroll to AI-powered insights — FlockPilot replaces your spreadsheets, WhatsApp groups, and disconnected tools with one integrated platform.
           </p>
-        </div>
+          <FarmMotifRow className="mt-6 justify-center" />
+        </Reveal>
       </section>
 
       {/* Module grid */}
       <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {modules.map((mod) => (
-            <article
-              key={mod.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
-            >
-              <div className="mb-3 text-3xl">{mod.icon}</div>
-              <h2 className="mb-2 text-xl font-bold">{mod.title}</h2>
-              <p className="mb-4 text-sm text-white/60">{mod.description}</p>
-              <ul className="space-y-1.5 text-sm text-white/80">
-                {mod.features.map((f) => (
-                  <li key={f} className="flex gap-2">
-                    <span className="mt-0.5 text-brand-light">✓</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <StaggerItem key={mod.title}>
+              <article className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <div className="mb-3 text-3xl">{mod.icon}</div>
+                <h2 className="mb-2 text-xl font-bold">{mod.title}</h2>
+                <p className="mb-4 text-sm text-white/60">{mod.description}</p>
+                <ul className="space-y-1.5 text-sm text-white/80">
+                  {mod.features.map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <span className="mt-0.5 text-brand-light">✓</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {/* CTA */}
       <section className="border-t border-white/10 px-6 py-16 text-center">
-        <h2 className="mb-4 text-2xl font-bold">Ready to try FlockPilot?</h2>
-        <p className="mb-6 text-white/60">
-          Start with a 14-day pilot on Starter. No credit card required.
-        </p>
-        <Link
-          href="/#demo"
-          className="inline-block rounded-xl bg-brand-light px-8 py-3 font-semibold text-brand-deep transition hover:opacity-90"
-        >
-          Request a Demo
-        </Link>
+        <Reveal>
+          <h2 className="mb-4 text-2xl font-bold">Ready to try FlockPilot?</h2>
+          <p className="mb-6 text-white/60">
+            Start with a 14-day pilot on Starter. No credit card required.
+          </p>
+          <Link
+            href="/#demo"
+            className="inline-block rounded-xl bg-brand-light px-8 py-3 font-semibold text-brand-deep transition hover:opacity-90"
+          >
+            Request a Demo
+          </Link>
+        </Reveal>
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
 # FlockPilot — Complete Product Documentation for LLMs
 
-> FlockPilot is a multi-tenant poultry farm management ERP built by Enro Agro Limited. It is cloud-based SaaS software designed for poultry farmers in Nigeria and Africa. Website: https://flockpilot.com
+> FlockPilot is a multi-tenant farm management and ERP platform built by Oluwatimilehin Akinnubi. It is cloud-based SaaS software for farms across Nigeria and Africa, with the deepest support today for poultry operations. Website: https://flockpilot.com
 
 ## Product Overview
 
@@ -138,12 +138,12 @@ FlockPilot differs from generic farm management or accounting software in severa
 - **Nigeria-focused**: Naira pricing, Nigerian tax/pension/NHF calculations, and operational conventions that match how Nigerian poultry farms actually work.
 - **Multi-tenant SaaS**: No installation required. Each company gets complete data isolation with role-based access.
 
-## Company Information
+## Project Information
 
-- **Company**: Enro Agro Limited
+- **Founder**: Oluwatimilehin Akinnubi
 - **Location**: Lagos, Nigeria
 - **Industry**: Agricultural Technology (AgTech)
 - **Website**: https://flockpilot.com
 - **Email**: info@flockpilot.com
 - **Phone**: +234 816 242 0463
-- **Social**: X (@enroagro), Instagram (@enroagro)
+- **Social**: X (@flockpilot), Instagram (@flockpilot)

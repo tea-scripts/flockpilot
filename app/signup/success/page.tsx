@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Payment Successful — FlockPilot",
@@ -11,14 +13,14 @@ export default function SignupSuccessPage() {
     <main className="min-h-screen bg-brand-deep text-white">
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-brand-light">
-            FlockPilot
+          <Link href="/" aria-label="FlockPilot home" className="inline-flex">
+            <Image src="/logo-white.png" alt="FlockPilot" width={1930} height={374} className="h-7 w-auto" />
           </Link>
         </div>
       </nav>
 
       <section className="px-6 py-24">
-        <div className="mx-auto max-w-md text-center">
+        <Reveal className="mx-auto max-w-md text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-brand-light/20">
             <svg className="h-8 w-8 text-brand-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -65,7 +67,7 @@ export default function SignupSuccessPage() {
           >
             Back to home
           </Link>
-        </div>
+        </Reveal>
       </section>
     </main>
   );
