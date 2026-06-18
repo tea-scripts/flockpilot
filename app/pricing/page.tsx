@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Reveal, Stagger, StaggerItem, FarmMotifRow } from "@/components/motion";
+import { appSignupUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Pricing — Plans from ₦25,000/month",
@@ -26,7 +27,7 @@ const tiers = [
     users: "3",
     bestFor: "Small farms getting structured for the first time",
     cta: "Get Started",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     features: [
       "Batch analytics (KPIs, trends)",
       "Mortality + medication logging",
@@ -48,7 +49,7 @@ const tiers = [
     bestFor: "Farms running consistent cycles and managing costs",
     featured: true,
     cta: "Get Started",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     features: [
       "Everything in Starter, plus:",
       "Flight Deck (live ops cockpit)",
@@ -70,7 +71,7 @@ const tiers = [
     users: "30",
     bestFor: "Multi-site operations that need control and accountability",
     cta: "Get Started",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     features: [
       "Everything in Growth, plus:",
       "Multi-batch comparisons",
@@ -141,7 +142,7 @@ export default function PricingPage() {
           </p>
           <div className="mt-6">
             <Link
-              href="/signup?trial=1"
+              href={appSignupUrl('trial=1')}
               className="rounded-xl border border-brand-light/40 px-6 py-2.5 text-sm font-semibold text-brand-light transition hover:bg-brand-light/10"
             >
               Or start with a 14-day free trial
@@ -250,7 +251,7 @@ export default function PricingPage() {
             View FAQ
           </Link>
           <Link
-            href="/signup"
+            href={appSignupUrl('trial=1')}
             className="rounded-xl bg-brand-light px-6 py-2.5 text-sm font-semibold text-brand-deep transition hover:opacity-90"
           >
             Get Started

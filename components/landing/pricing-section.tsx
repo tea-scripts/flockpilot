@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Reveal } from "@/components/motion";
 import { fadeUp, staggerContainer } from "@/components/motion/variants";
 import { trackLandingEvent } from "@/lib/analytics";
+import { appSignupUrl } from "@/lib/config";
 import { addOns, pricingTiers, type BillingCycle } from "./data";
 
 export function PricingSection() {
@@ -18,7 +19,7 @@ export function PricingSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-yellow">Pricing</p>
             <h2 className="mt-3 text-3xl font-bold text-white">Plans for every farm growth stage</h2>
             <a
-              href="/signup?trial=1"
+              href={appSignupUrl('trial=1')}
               className="mt-3 inline-block text-sm font-medium text-brand-light transition hover:text-brand-yellow"
             >
               Or start with a 14-day free trial &rarr;

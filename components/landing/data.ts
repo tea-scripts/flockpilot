@@ -1,3 +1,5 @@
+import { appSignupUrl } from '../../lib/config';
+
 export type BillingCycle = "monthly" | "annual";
 
 export type FeatureItem = {
@@ -190,7 +192,7 @@ export const pricingTiers: PricingTier[] = [
       "Email support"
     ],
     cta: "Get Started Free",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     bestFor: "500–2,000 birds, first-time structured tracking."
   },
   {
@@ -211,7 +213,7 @@ export const pricingTiers: PricingTier[] = [
       "Financial statements (P&L, balance sheet)"
     ],
     cta: "Get Started",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     bestFor: "2,000–10,000 birds, multiple batches, owner + farm manager + accounts."
   },
   {
@@ -232,7 +234,7 @@ export const pricingTiers: PricingTier[] = [
       "Dedicated onboarding session"
     ],
     cta: "Get Started",
-    ctaHref: "/signup",
+    ctaHref: appSignupUrl('trial=1'),
     bestFor: "10,000–50,000 birds, fast-growing farms, structured teams.",
     featured: true
   },
