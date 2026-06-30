@@ -1,5 +1,49 @@
 [
   {
+    "version": "0.7.0",
+    "date": "2026-06-25",
+    "entries": [
+      {
+        "type": "added",
+        "text": "Egg-laying (Layer) flock support — track daily egg collections on web and mobile, sell eggs by crate, tray or piece, and see egg production and sales trends across your dashboards. Egg sales post automatically to a dedicated Egg Revenue account so your books stay accurate"
+      },
+      {
+        "type": "added",
+        "text": "Test mode — a safe sandbox to explore and train your team. Admins switch between Live and Test from an in-app toggle, with a clear banner showing which you're in, and can seed Test with sample data. Nothing in Test touches your real books: no charges, emails, SMS, WhatsApp, push, bank transfers, or AI usage"
+      },
+      {
+        "type": "added",
+        "text": "Invite your team — admins can invite staff to their workspace straight from the Users page, with branded \"Accept invitation\" emails and ready-made Secretary and Vet Doctor roles to assign"
+      },
+      {
+        "type": "fixed",
+        "text": "No ceiling on large transactions — amounts above ₦21.4 million now save correctly across batches, payroll runs and invoices"
+      },
+      {
+        "type": "fixed",
+        "text": "More accurate financial statements — invoices raised from a farm sale no longer double-count revenue, and money you've advanced to vendors is now tracked separately from money customers owe you"
+      }
+    ]
+  },
+  {
+    "version": "0.6.0",
+    "date": "2026-05-31",
+    "entries": [
+      {
+        "type": "added",
+        "text": "One login for multiple farms — sign in with just your email and password (no workspace name needed) and switch between the businesses you belong to from a single account"
+      },
+      {
+        "type": "added",
+        "text": "FlockPilot on mobile — run your farm from your phone: record flock batches, farm sales and feed receipts; review a batch activity timeline; approve or reject pending farm and finance submissions on the go; and check reports including flock summary, mortality trend, cash flow, cash position and unpaid bills, with a dedicated finance dashboard for finance staff"
+      },
+      {
+        "type": "added",
+        "text": "Business overview on your home screen — a dashboard showing cash on hand, unpaid bills awaiting payment, active flocks and bird counts, staff numbers, pending approvals, and a 6-month revenue-vs-expenses trend at a glance"
+      }
+    ]
+  },
+  {
     "version": "0.5.0",
     "date": "2026-05-02",
     "entries": [
